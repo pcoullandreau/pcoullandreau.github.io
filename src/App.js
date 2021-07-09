@@ -8,7 +8,16 @@ import icons from './images/icons.png';
 import logos from './images/logos.png';
 import websites from './images/websites.png';
 
-import videos from './images/videos.png';
+// import videos from './images/videos.png';
+
+const videos = {
+	0:'https://www.youtube.com/embed/tgbNymZ7vqY',
+	1:'https://www.youtube.com/embed/N3NXWRWXVK0',
+	2:'https://www.youtube.com/embed/TjtuqWwVHdU',
+	3:'https://www.youtube.com/embed/cyW5z-M2yzw',
+	4:'https://www.youtube.com/embed/zHhd7roXlcE&t=7s',
+	5:'https://www.youtube.com/embed/-PCuYOwmbNo'
+}
 
 
 class App extends React.Component {
@@ -137,14 +146,64 @@ class App extends React.Component {
 					<div className="container">
 						<div className="block">
 							<div class="ui section divider"></div>
-							{ this.renderSectionTitle("VIDEOS & ANIMATIONS") }
-							<img className="image" src={videos} />
+							{ this.renderVideoGrid() }
 						</div>	
 					</div>
 				</div>
 
 			</React.Fragment>
 
+		)
+	}
+
+
+	renderVideoGrid = () => {
+		return (
+			<React.Fragment>
+				{ this.renderSectionTitle("VIDEOS & ANIMATIONS") }
+				<div class="ui equal width grid">
+					<div class="row">
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(0)}
+								<p className="video-title">Animated logo (loop)</p>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(1)}
+								<p className="video-title">Widget</p>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(2)}
+								<p className="video-title">Facebook Motion Banner</p>
+							</div>
+						</div>
+					 </div>
+					 <div class="row">
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(3)}
+								<p className="video-title">15 teaser videos (ebooks)</p>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(4)}
+								<p className="video-title">4 teaser videos (articles)</p>
+							</div>
+						</div>
+						<div class="column">
+							<div class="ui segment">
+								{this.renderVideoPlayer(5)}
+								<p className="video-title">4 commercials</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</React.Fragment>
 		)
 
 	}
@@ -163,6 +222,23 @@ class App extends React.Component {
 				</div>
 			</React.Fragment>
 
+		)
+
+	}
+
+	renderVideoPlayer = (id) => {
+		let videoLink = videos[id]
+		return (
+			<React.Fragment>
+				<iframe 
+					className="video-player"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen;" 
+					allowfullscreen
+					src={videoLink} 
+				/>
+			</React.Fragment>
 		)
 
 	}
@@ -331,6 +407,5 @@ class App extends React.Component {
 	}
 
 }
-				{/*<div class="ui section divider"></div>*/}
 
 export default App;
