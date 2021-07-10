@@ -29,10 +29,10 @@ class App extends React.Component {
 				<h1 className={['name', 'center'].join(' ')}> Pierre Coullandreau </h1>	
 				{this.renderSubtitle()}
 				<div id="address">
-					1801 N Page Avenue <br/>
-					Oklahoma City, OK 73111 <br/>
-					(405) 215-0662 <br/>
-					pierre.cldr@gmail.com <br/>
+					<span className="address-line">1801 N Page Avenue</span>
+					<span className="address-line">Oklahoma City, OK 73111</span>
+					<span className="address-line">(405) 215-0662</span>
+					<span className="address-line">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
 
@@ -46,10 +46,10 @@ class App extends React.Component {
 				<h1 className={['name', 'center'].join(' ')}> Thank you </h1>
 				<h2 className="subtitle"> Pierre Coullandreau </h2>
 				<div id="address">
-					1801 N Page Avenue <br/>
-					Oklahoma City, OK 73111 <br/>
-					(405) 215-0662 <br/>
-					pierre.cldr@gmail.com <br/>
+					<span className="address-line">1801 N Page Avenue</span>
+					<span className="address-line">Oklahoma City, OK 73111</span>
+					<span className="address-line">(405) 215-0662</span>
+					<span className="address-line">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
 

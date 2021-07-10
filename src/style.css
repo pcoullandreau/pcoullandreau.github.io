@@ -43,14 +43,20 @@ body {
 	transform: translate(-50%, -85%);
 }
 
+.address-line {
+	font-size:clamp(1.5vh, 2vh, 14px);
+	line-height: clamp(2vh, 2.5vh, 20px);;
+	display: block;
+}
 
 .section-title {
 	padding-top: 5% !important;
+	font-size:clamp(2.5vh, 3vh, 18px);
 } 
 
 .title {
 	font-family: 'Rokkitt', serif;
-	font-size: 55px;
+	font-size:clamp(6vh, 7.5vh, 55px);
 }
 
 .subtitle {
@@ -61,16 +67,17 @@ body {
 	margin-top: 5%;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 25px;
+	font-size:clamp(3vh, 3.5vh, 25px);
 }
 
 .name {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 50px;
+	font-size:clamp(5vh, 7vh, 50px);
 }
 
 .image {
 	height: 90%;
+	max-height: 90%;
 } 
 
 .video-title {
@@ -78,6 +85,7 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
+	font-size:clamp(1.5vh, 2vh, 14px);
 }
 
 .video-player {
@@ -90,9 +98,6 @@ body {
 	width: 75%;
 	margin-left: auto;
 	margin-right: auto;
-/*	position: absolute;
-	left: 50%;
-	transform: translate(-50%, 0);*/
 }
 
 .ui.grid {
@@ -100,6 +105,7 @@ body {
 	margin: 0;
     top: 50%;
 	transform: translate(-0%, -50%);
+	max-height: 7.5vh;
 }
 
 .ui.grid .column {
