@@ -91,65 +91,65 @@ class App extends React.Component {
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("FLYERS") }
 							<img className="image" src={flyers} />
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
 							<img className="image" src={websites} />
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("EMAILS") }
 							<img className="image" src={email} />
 						</div>	
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("EMAILS (CTD)") }
 							<img className="image" src={email_2} />
 						</div>	
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("LOGOS") }
 							<img className="image" src={logos} />
 						</div>	
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("ICONS LIBRARY") }
 							<img className="image" src={icons} />
 						</div>	
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderVideoGrid() }
 						</div>	
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 
 			</React.Fragment>
 
@@ -215,11 +215,11 @@ class App extends React.Component {
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("TODO") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -250,11 +250,11 @@ class App extends React.Component {
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("TODO") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -269,11 +269,11 @@ class App extends React.Component {
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("TODO") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -287,11 +287,11 @@ class App extends React.Component {
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderSectionTitle("TODO") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -334,67 +334,67 @@ class App extends React.Component {
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 
 				{/*Graphic Designer*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderTitle("Graphic Designer") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				{ this.renderSection("graphic") }
 
 				{/*Packaging Designer*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderTitle("Packaging Designer") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				{ this.renderSection("packaging") }
 
 				{/*Infographist*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderTitle("Infographist") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				{ this.renderSection("infographist") }
 
 				{/*Graphic Assistant*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderTitle("Graphic Assistant") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				{ this.renderSection("assistant") }
 
 				{/*Personal Creations*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderTitle("Personal Creations") }
 						</div>
 					</div>
 				</div>
+				<div class="ui section divider"></div>
 				{ this.renderSection("personal") }
 
 				{/*Thank you*/}
 				<div className="slide">
 					<div className="container">
 						<div className="block">
-							<div class="ui section divider"></div>
 							{ this.renderThankYou() }
 						</div>
 					</div>
