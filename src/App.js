@@ -92,7 +92,7 @@ class App extends React.Component {
 					<div className="container">
 						<div className="block">
 							{ this.renderSectionTitle("FLYERS") }
-							<img className="image" src={flyers} />
+							<a href={flyers} target="_blank"><img className="image" src={flyers} /></a>
 						</div>
 					</div>
 				</div>
