@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './style.css';
 
 // images imports
 import email_2 from './images/email_2.png';
@@ -15,12 +16,46 @@ const videos = {
 	1:'https://www.youtube.com/embed/N3NXWRWXVK0',
 	2:'https://www.youtube.com/embed/TjtuqWwVHdU',
 	3:'https://www.youtube.com/embed/cyW5z-M2yzw',
-	4:'https://www.youtube.com/embed/zHhd7roXlcE&t=7s',
+	4:'https://www.youtube.com/embed/zHhd7roXlcE',
 	5:'https://www.youtube.com/embed/-PCuYOwmbNo'
 }
 
 
 class App extends React.Component {
+
+	componentDidMount() {
+		window.addEventListener("fullscreenchange", event => {
+			if (!document.fullscreenElement) {
+				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
+	    		window.scrollTo(0, scrollPosition)
+			} 
+		}, false);
+		window.addEventListener("mozfullscreenchange", event => {
+			if (!document.fullscreenElement) {
+				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
+	    		window.scrollTo(0, scrollPosition)
+			} 
+		}, false);
+		window.addEventListener("webkitfullscreenchange", event => {
+			if (!document.fullscreenElement) {
+				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
+	    		window.scrollTo(0, scrollPosition)
+			} 
+		}, false);
+	}
+
+	handleLoad(event, href) {
+		var newTitle = event.target.attributes.title.value;
+		var newWin = window.open(href, "_blank");
+
+		// add a load listener to the window so that the title gets changed on page load
+		newWin.addEventListener("load", function() {
+		    newWin.document.title = newTitle;
+		});
+
+		// stop the default `a` link or you will get 2 new windows!
+		event.returnValue =  false;
+	}
 
 
 	renderName = () => {
@@ -91,51 +126,63 @@ class App extends React.Component {
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("FLYERS") }
-						<a href={flyers} target="_blank"><img className="image" src={flyers} /></a>
+						<a href={flyers} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, flyers)}>
+							<img className="image" title="flyers.png" src={flyers} loading="lazy" alt="flyers"/>
+						</a>
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
-						<img className="image" src={websites} />
+						<a href={websites} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, websites)}>
+							<img className="image" title="websites.png" src={websites} loading="lazy" alt="websites" />
+						</a>
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("EMAILS") }
-						<img className="image" src={email} />
+						<a href={email} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, email)}>
+							<img className="image" title="email.png" src={email} loading="lazy" alt="emails"/>
+						</a>
 					</div>	
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("EMAILS (CTD)") }
-						<img className="image" src={email_2} />
+						<a href={email_2} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, email_2)}>
+							<img className="image" title="email_2.png" src={email_2} loading="lazy" alt="emails" />
+						</a>
 					</div>	
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("LOGOS") }
-						<img className="image" src={logos} />
+						<a href={logos} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, logos)}>
+							<img className="image" title="logos.png" src={logos} loading="lazy" alt="logos"/>
+						</a>
 					</div>	
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("ICONS LIBRARY") }
-						<img className="image" src={icons} />
+						<a href={icons} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, icons)}>
+							<img className="image" title="icons.png" src={icons} loading="lazy" alt="icons"/>
+						</a>
 					</div>	
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				<div className="container">
-					<div className="block">
+					<div id = "video-grid" className="block">
 						{ this.renderVideoGrid() }
 					</div>	
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 
 			</React.Fragment>
 
@@ -147,42 +194,42 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				{ this.renderSectionTitle("VIDEOS & ANIMATIONS") }
-				<div class="ui equal width grid">
-					<div class="row">
-						<div class="column">
-							<div class="ui segment">
+				<div className="ui equal width grid">
+					<div className="row">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(0)}
 								<p className="video-title">Animated logo (loop)</p>
 							</div>
 						</div>
-						<div class="column">
-							<div class="ui segment">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(1)}
 								<p className="video-title">Widget</p>
 							</div>
 						</div>
-						<div class="column">
-							<div class="ui segment">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(2)}
 								<p className="video-title">Facebook Motion Banner</p>
 							</div>
 						</div>
 					 </div>
-					 <div class="row">
-						<div class="column">
-							<div class="ui segment">
+					 <div className="row">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(3)}
 								<p className="video-title">15 teaser videos (ebooks)</p>
 							</div>
 						</div>
-						<div class="column">
-							<div class="ui segment">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(4)}
 								<p className="video-title">4 teaser videos (articles)</p>
 							</div>
 						</div>
-						<div class="column">
-							<div class="ui segment">
+						<div className="column">
+							<div className="ui segment">
 								{this.renderVideoPlayer(5)}
 								<p className="video-title">4 commercials</p>
 							</div>
@@ -203,7 +250,7 @@ class App extends React.Component {
 						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -217,9 +264,9 @@ class App extends React.Component {
 				<iframe 
 					className="video-player"
 					title="YouTube video player"
-					frameborder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;fullscreen;" 
-					allowfullscreen
+					frameBorder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
+					allowFullScreen
 					src={videoLink} 
 				/>
 			</React.Fragment>
@@ -236,7 +283,7 @@ class App extends React.Component {
 						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -253,7 +300,7 @@ class App extends React.Component {
 						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -269,7 +316,7 @@ class App extends React.Component {
 						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 			</React.Fragment>
 
 		)
@@ -315,7 +362,7 @@ class App extends React.Component {
 						{ this.renderName() }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 
 				{/*Graphic Designer*/}
 				<div className="container">
@@ -323,7 +370,7 @@ class App extends React.Component {
 						{ this.renderTitle("Graphic Designer") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				{ this.renderSection("graphic") }
 
 				{/*Packaging Designer*/}
@@ -332,7 +379,7 @@ class App extends React.Component {
 						{ this.renderTitle("Packaging Designer") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				{ this.renderSection("packaging") }
 
 				{/*Infographist*/}
@@ -342,7 +389,7 @@ class App extends React.Component {
 					</div>
 				</div>
 
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				{ this.renderSection("infographist") }
 
 				{/*Graphic Assistant*/}
@@ -351,7 +398,7 @@ class App extends React.Component {
 						{ this.renderTitle("Graphic Assistant") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				{ this.renderSection("assistant") }
 
 				{/*Personal Creations*/}
@@ -360,7 +407,7 @@ class App extends React.Component {
 						{ this.renderTitle("Personal Creations") }
 					</div>
 				</div>
-				<div class="ui section divider"></div>
+				<div className="ui section divider"></div>
 				{ this.renderSection("personal") }
 
 				{/*Thank you*/}
