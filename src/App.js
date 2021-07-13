@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './style.css';
+import './style.css';
 
 // images imports
 import email_2 from './images/email_2.png';
@@ -8,8 +8,8 @@ import flyers from './images/flyers.png';
 import icons from './images/icons.png';
 import logos from './images/logos.png';
 import websites from './images/websites.png';
-
-// import videos from './images/videos.png';
+import pdf from './images/pdf.svg';
+import portfolio from './portfolio.pdf'
 
 const videos = {
 	0:'https://www.youtube.com/embed/tgbNymZ7vqY',
@@ -126,54 +126,54 @@ class App extends React.Component {
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("FLYERS") }
-						<a href={flyers} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, flyers)}>
+						<span onClick={e => this.handleLoad(e, flyers)}>
 							<img className="image" title="flyers.png" src={flyers} loading="lazy" alt="flyers"/>
-						</a>
+						</span>
 					</div>
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
-						<a href={websites} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, websites)}>
+						<span onClick={e => this.handleLoad(e, websites)}>
 							<img className="image" title="websites.png" src={websites} loading="lazy" alt="websites" />
-						</a>
+						</span>
 					</div>
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("EMAILS") }
-						<a href={email} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, email)}>
+						<span onClick={e => this.handleLoad(e, email)}>
 							<img className="image" title="email.png" src={email} loading="lazy" alt="emails"/>
-						</a>
+						</span>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("EMAILS (CTD)") }
-						<a href={email_2} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, email_2)}>
+						<span onClick={e => this.handleLoad(e, email_2)}>
 							<img className="image" title="email_2.png" src={email_2} loading="lazy" alt="emails" />
-						</a>
+						</span>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("LOGOS") }
-						<a href={logos} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, logos)}>
+						<span onClick={e => this.handleLoad(e, logos)}>
 							<img className="image" title="logos.png" src={logos} loading="lazy" alt="logos"/>
-						</a>
+						</span>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle("ICONS LIBRARY") }
-						<a href={icons} target="_blank" rel="noreferrer" onClick={e => this.handleLoad(e, icons)}>
+						<span onClick={e => this.handleLoad(e, icons)}>
 							<img className="image" title="icons.png" src={icons} loading="lazy" alt="icons"/>
-						</a>
+						</span>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
@@ -352,8 +352,10 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				{/*Download PDF*/}
-				<div className="pdf">
-
+				<div id="pdf-button">
+					<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">
+						<img id="pdf-icon" title="Download PDF" src={pdf} alt="Download PDF" />
+					</a>
 				</div>
 
 				{/*Title*/}

@@ -77,6 +77,7 @@ body {
 .image {
 	height: 90%;
 	max-height: 90%;
+	cursor: pointer;
 } 
 
 .video-title {
@@ -117,4 +118,30 @@ body {
     box-shadow: none;
 }
 
+#pdf-button{
+	position: fixed;
+	bottom: 5vh;
+	right: 5vh;
+	background-color: #EC1A2B;
+	max-height: 8vh;
+	max-width: 8vh;
+	height: 60px;
+	width: 60px;
+	border-radius: 50%;
+	border: none;
+	z-index: 10;
+}
+
+#pdf-icon:hover {
+	cursor: pointer;
+}
+
+#pdf-icon {
+	max-height: 100%;
+	max-width: 100%;
+	padding-top: 3%;
+	padding-bottom: 3%;
+	z-index: 100;
+	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1603%) hue-rotate(176deg) brightness(96%) contrast(99%);
+}
 
