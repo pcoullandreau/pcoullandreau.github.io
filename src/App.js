@@ -9,7 +9,7 @@ import icons from './images/icons.png';
 import logos from './images/logos.png';
 import websites from './images/websites.png';
 import pdf from './images/pdf.svg';
-import portfolio from './portfolio.pdf'
+// import portfolio from './portfolio.pdf'
 
 const videos = {
 	0:'https://www.youtube.com/embed/tgbNymZ7vqY',
@@ -352,8 +352,9 @@ class App extends React.Component {
 		return (
 			<React.Fragment>
 				{/*Download PDF*/}
+			{/*<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">*/}
 				<div id="pdf-button">
-					<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">
+					<a href="https://www.acoullandreau.com/portfolio_pierre/portfolio.pdf" target="_blank" rel="noreferrer" download="Pierre Coullandreau - Portfolio.pdf">
 						<img id="pdf-icon" title="Download PDF" src={pdf} alt="Download PDF" />
 					</a>
 				</div>
