@@ -88,66 +88,52 @@ class App extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("FLYERS") }
-							<a href={flyers} target="_blank"><img className="image" src={flyers} /></a>
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("FLYERS") }
+						<a href={flyers} target="_blank"><img className="image" src={flyers} /></a>
 					</div>
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
-							<img className="image" src={websites} />
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
+						<img className="image" src={websites} />
 					</div>
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("EMAILS") }
-							<img className="image" src={email} />
-						</div>	
-					</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("EMAILS") }
+						<img className="image" src={email} />
+					</div>	
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("EMAILS (CTD)") }
-							<img className="image" src={email_2} />
-						</div>	
-					</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("EMAILS (CTD)") }
+						<img className="image" src={email_2} />
+					</div>	
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("LOGOS") }
-							<img className="image" src={logos} />
-						</div>	
-					</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("LOGOS") }
+						<img className="image" src={logos} />
+					</div>	
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("ICONS LIBRARY") }
-							<img className="image" src={icons} />
-						</div>	
-					</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("ICONS LIBRARY") }
+						<img className="image" src={icons} />
+					</div>	
 				</div>
 				<div class="ui section divider"></div>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderVideoGrid() }
-						</div>	
-					</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderVideoGrid() }
+					</div>	
 				</div>
 				<div class="ui section divider"></div>
 
@@ -212,11 +198,9 @@ class App extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("TODO") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
@@ -247,11 +231,9 @@ class App extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("TODO") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
@@ -266,11 +248,9 @@ class App extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("TODO") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
@@ -284,11 +264,9 @@ class App extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderSectionTitle("TODO") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderSectionTitle("TODO") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
@@ -326,77 +304,69 @@ class App extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
+				{/*Download PDF*/}
+				<div className="pdf">
+
+				</div>
+
 				{/*Title*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderName() }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderName() }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
 
 				{/*Graphic Designer*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderTitle("Graphic Designer") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderTitle("Graphic Designer") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
 				{ this.renderSection("graphic") }
 
 				{/*Packaging Designer*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderTitle("Packaging Designer") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderTitle("Packaging Designer") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
 				{ this.renderSection("packaging") }
 
 				{/*Infographist*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderTitle("Infographist") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderTitle("Infographist") }
 					</div>
 				</div>
+
 				<div class="ui section divider"></div>
 				{ this.renderSection("infographist") }
 
 				{/*Graphic Assistant*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderTitle("Graphic Assistant") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderTitle("Graphic Assistant") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
 				{ this.renderSection("assistant") }
 
 				{/*Personal Creations*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderTitle("Personal Creations") }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderTitle("Personal Creations") }
 					</div>
 				</div>
 				<div class="ui section divider"></div>
 				{ this.renderSection("personal") }
 
 				{/*Thank you*/}
-				<div className="slide">
-					<div className="container">
-						<div className="block">
-							{ this.renderThankYou() }
-						</div>
+				<div className="container">
+					<div className="block">
+						{ this.renderThankYou() }
 					</div>
 				</div>
 
