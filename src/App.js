@@ -11,13 +11,60 @@ import websites from './images/websites.png';
 import pdf from './images/pdf.svg';
 // import portfolio from './portfolio.pdf'
 
+
+
+
+
 const videos = {
-	0:'https://www.youtube.com/embed/tgbNymZ7vqY',
-	1:'https://www.youtube.com/embed/N3NXWRWXVK0',
-	2:'https://www.youtube.com/embed/TjtuqWwVHdU',
-	3:'https://www.youtube.com/embed/cyW5z-M2yzw',
-	4:'https://www.youtube.com/embed/zHhd7roXlcE',
-	5:'https://www.youtube.com/embed/-PCuYOwmbNo'
+	'playlist':'https://www.youtube.com/embed/tgbNymZ7vqY',
+	0:{
+		'title':'Animated logo (loop)',
+		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	1: {
+		'title':'Widget',
+		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
+	},
+	2: {
+		'title':'Facebook Motion Banner',
+		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
+	},
+	3: {
+		'title':'15 teaser videos (ebooks)',
+		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
+	},
+	4: {
+		'title':'4 teaser videos (articles)',
+		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
+	},
+	5: {
+		'title':'4 commercials',
+		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
+	},
+	6: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	7: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
+	},
+	8: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
+	},
+	9: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
+	},
+	10: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
+	},
+	11: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
+	}
 }
 
 
@@ -64,9 +111,6 @@ class App extends React.Component {
 				<h1 className={['name', 'center'].join(' ')}> Pierre Coullandreau </h1>	
 				{this.renderSubtitle()}
 				<div id="address">
-					<span className="address-line">1801 N Page Avenue</span>
-					<span className="address-line">Oklahoma City, OK 73111</span>
-					<span className="address-line">(405) 215-0662</span>
 					<span className="address-line">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
@@ -81,9 +125,6 @@ class App extends React.Component {
 				<h1 className={['name', 'center'].join(' ')}> Thank you </h1>
 				<h2 className="subtitle"> Pierre Coullandreau </h2>
 				<div id="address">
-					<span className="address-line">1801 N Page Avenue</span>
-					<span className="address-line">Oklahoma City, OK 73111</span>
-					<span className="address-line">(405) 215-0662</span>
 					<span className="address-line">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
@@ -179,7 +220,15 @@ class App extends React.Component {
 				<div className="ui section divider"></div>
 				<div className="container">
 					<div id = "video-grid" className="block">
-						{ this.renderVideoGrid() }
+						{ this.renderVideoGrid(0, "VIDEOS & ANIMATIONS") }
+						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
+					</div>
+				</div>
+				<div className="ui section divider"></div>
+				<div className="container">
+					<div id = "video-grid" className="block">
+						{ this.renderVideoGrid(1, "VIDEOS & ANIMATIONS (CTD)") }
+						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
@@ -190,48 +239,50 @@ class App extends React.Component {
 	}
 
 
-	renderVideoGrid = () => {
+	renderVideoGrid = (sectionNumber, title) => {
+		var offset = 6 * sectionNumber;
+
 		return (
 			<React.Fragment>
-				{ this.renderSectionTitle("VIDEOS & ANIMATIONS") }
+				{ this.renderSectionTitle(title) }
 				<div className="ui equal width grid">
 					<div className="row">
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(0)}
-								<p className="video-title">Animated logo (loop)</p>
+								{this.renderVideoPlayer(offset+0)}
+								<p className="video-title">{videos[offset+0].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(1)}
-								<p className="video-title">Widget</p>
+								{this.renderVideoPlayer(offset+1)}
+								<p className="video-title">{videos[offset+1].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(2)}
-								<p className="video-title">Facebook Motion Banner</p>
+								{this.renderVideoPlayer(offset+2)}
+								<p className="video-title">{videos[offset+2].title}</p>
 							</div>
 						</div>
 					 </div>
 					 <div className="row">
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(3)}
-								<p className="video-title">15 teaser videos (ebooks)</p>
+								{this.renderVideoPlayer(offset+3)}
+								<p className="video-title">{videos[offset+3].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(4)}
-								<p className="video-title">4 teaser videos (articles)</p>
+								{this.renderVideoPlayer(offset+4)}
+								<p className="video-title">{videos[offset+4].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
-								{this.renderVideoPlayer(5)}
-								<p className="video-title">4 commercials</p>
+								{this.renderVideoPlayer(offset+5)}
+								<p className="video-title">{videos[offset+5].title}</p>
 							</div>
 						</div>
 					</div>
@@ -258,7 +309,7 @@ class App extends React.Component {
 	}
 
 	renderVideoPlayer = (id) => {
-		let videoLink = videos[id]
+		let videoLink = videos[id].link
 		return (
 			<React.Fragment>
 				<iframe 
