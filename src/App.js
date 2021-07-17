@@ -16,7 +16,7 @@ import pdf from './images/pdf.svg';
 
 
 const videos = {
-	'playlist':'https://www.youtube.com/embed/tgbNymZ7vqY',
+	'playlist':'https://youtube.com/playlist?list=PL-BIii6OgNRoJqzUi5gmEAvpLc9im3eUH',
 	0:{
 		'title':'Animated logo (loop)',
 		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
@@ -62,6 +62,30 @@ const videos = {
 		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
 	},
 	11: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
+	},
+	12: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
+	},
+	13: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
+	},
+	14: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
+	},
+	15: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
+	},
+	16: {
+		'title':'Toto',
+		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
+	},
+	17: {
 		'title':'Toto',
 		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
 	}
@@ -232,7 +256,13 @@ class App extends React.Component {
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
-
+				<div className="container">
+					<div id = "video-grid" className="block">
+						{ this.renderVideoGrid(2, "VIDEOS & ANIMATIONS (CTD)") }
+						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
+					</div>	
+				</div>
+				<div className="ui section divider"></div>
 			</React.Fragment>
 
 		)
