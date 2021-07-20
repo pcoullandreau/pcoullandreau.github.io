@@ -96,6 +96,14 @@ body {
 	height: 25vh;
 }
 
+.video-page-player {
+	width: 80%;
+	height: 80%;
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0%);
+}
+
 .gif {
 	height: 25vh;
 } 
@@ -112,8 +120,6 @@ body {
 	position: absolute;
 	top: 20%;
 	transform: translate(0%, -20%);
-/*	top: calc(45% - 40px);
-	transform: translate(0%, -150%);*/
 	margin: 0;
 	height: 7.5vh;
 }

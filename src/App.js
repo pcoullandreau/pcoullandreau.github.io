@@ -1,11 +1,6 @@
 import React from 'react';
 import './style.css';
 
-// images imports
-import pdf from './images/pdf.svg';
-import widget from './images/01_Graphic Designer/07.gif';
-import widget_2 from './images/01_Graphic Designer/08.gif';
-
 // pdf import
 // import portfolio from './portfolio.pdf'
 
@@ -63,15 +58,17 @@ class App extends React.Component {
 		if (!document.fullscreenElement) {
 	    	window.scrollTo(0, this.state.scrollPosition)
 		} else {
-			var videoSectionNum;
+			var videoSection;
 			if (event.srcElement.id < 6) {
-				videoSectionNum = "0"
-			} else if (event.srcElement.id > 11) {
-				videoSectionNum = "2"
+				videoSection = "grid-0"
+			} else if (event.srcElement.id >= 6 && event.srcElement.id < 12) {
+				videoSection = "grid-1"
+			} else if (event.srcElement.id >= 12 && event.srcElement.id < 18) {
+				videoSection = "grid-2"
 			} else {
-				videoSectionNum = "1"
-			} 
-			var scrollPosition = document.getElementById("video-grid-"+videoSectionNum).getBoundingClientRect().top;
+				videoSection = "page"
+			}
+			var scrollPosition = document.getElementById("video-"+videoSection).getBoundingClientRect().top;
 			this.setState({scrollPosition})
 		} 
 	}
@@ -206,8 +203,8 @@ class App extends React.Component {
 		var target_2 = (<React.Fragment>{this.renderVideoPlayer(offset+2)}</React.Fragment>)
 
 		if (sectionNumber === 0) {
-			target_1 = (<img className="gif" src={widget} alt="CF widget"/>)
-			target_2 = (<img className="gif" src={widget_2} alt="How to go from there" />)
+			target_1 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/01_Graphic Designer/07.gif`} alt="CF widget"/>)
+			target_2 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/01_Graphic Designer/08.gif`} alt="How to go from there" />)
 		} 
 
 		return (
@@ -279,38 +276,71 @@ class App extends React.Component {
 
 	}
 
+	renderVideoPage = id => {
+		let videoLink = this.config.videos[id].link
+		let videoTitle = this.config.videos[id].title
+
+		return (
+			<React.Fragment>
+				<div className="container">
+					<div id = "video-page" className="block">
+						{ this.renderSectionTitle(videoTitle) }
+						<iframe 
+							className="video-page-player"
+							title="YouTube video player"
+							id = {id}
+							frameBorder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
+							allowFullScreen
+							src={videoLink} 
+						/>
+					</div>
+				</div>
+				<div className="ui section divider"></div>
+			</React.Fragment>
+		)
+	}
+
 	renderSection = target => {
 
 		if (target === "graphic_designer") {
 			return <React.Fragment>{ this.renderGraphicDesigner() }</React.Fragment>;
-
 		} else {
+
+			var videoPage;
+			if (target === "graphic_assistant") {
+				videoPage = (<React.Fragment>{this.renderVideoPage(100)}</React.Fragment>)
+			}
+
 
 			var content = this.config.visuals[target];
 
 			return (
 				<React.Fragment>
-					{
-						React.Children.toArray(
-							Object.keys(content.pages).map((item, i) => {
-								return (
-									<React.Fragment>
-										<div className="container">
-											<div className="block">
-												{ this.renderSectionTitle(content.pages[item].title) }
-												<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
-													<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
-												</span>
+					<React.Fragment>
+						{
+							React.Children.toArray(
+								Object.keys(content.pages).map((item, i) => {
+									return (
+										<React.Fragment>
+											<div className="container">
+												<div className="block">
+													{ this.renderSectionTitle(content.pages[item].title) }
+													<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
+														<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
+													</span>
+												</div>
 											</div>
-										</div>
-										<div className="ui section divider"></div>
-									</React.Fragment>
-								)
-							})
-						)
-					}
+											<div className="ui section divider"></div>
+										</React.Fragment>
+									)
+								})
+							)
+						}
+					</React.Fragment>
+					{videoPage}
 				</React.Fragment>
-			)
+			)	
 
 		} 
 
@@ -326,7 +356,7 @@ class App extends React.Component {
 				{/*<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">*/}
 					<div id="pdf-button">
 						<a href="https://www.acoullandreau.com/portfolio_pierre/portfolio.pdf" target="_blank" rel="noreferrer" download="Pierre Coullandreau - Portfolio.pdf">
-							<img id="pdf-icon" title="Download PDF" src={pdf} alt="Download PDF" />
+							<img id="pdf-icon" title="Download PDF" src={`${process.env.PUBLIC_URL}/images/pdf.svg`} alt="Download PDF" />
 						</a>
 					</div>
 
