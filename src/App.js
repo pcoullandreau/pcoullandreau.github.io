@@ -19,6 +19,7 @@ class App extends React.Component {
 
 		this.state = {
 			'isReady':false,
+			'scrollPosition':0
 		};
 
 		this.config = undefined;
@@ -58,10 +59,20 @@ class App extends React.Component {
 	    return p;
 	}
 
-	onFullScreenChange() {
+	onFullScreenChange = event => {
 		if (!document.fullscreenElement) {
-			var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
-	    	window.scrollTo(0, scrollPosition)
+	    	window.scrollTo(0, this.state.scrollPosition)
+		} else {
+			var videoSectionNum;
+			if (event.srcElement.id < 6) {
+				videoSectionNum = "0"
+			} else if (event.srcElement.id > 11) {
+				videoSectionNum = "2"
+			} else {
+				videoSectionNum = "1"
+			} 
+			var scrollPosition = document.getElementById("video-grid-"+videoSectionNum).getBoundingClientRect().top;
+			this.setState({scrollPosition})
 		} 
 	}
 
@@ -162,21 +173,21 @@ class App extends React.Component {
 					)
 				}
 				<div className="container">
-					<div id = "video-grid" className="block">
+					<div id = "video-grid-0" className="block">
 						{ this.renderVideoGrid(0, "VIDEOS & ANIMATIONS") }
 						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
 					</div>
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
-					<div id = "video-grid" className="block">
+					<div id = "video-grid-1" className="block">
 						{ this.renderVideoGrid(1, "VIDEOS & ANIMATIONS (CTD)") }
 						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
 					</div>	
 				</div>
 				<div className="ui section divider"></div>
 				<div className="container">
-					<div id = "video-grid" className="block">
+					<div id = "video-grid-2" className="block">
 						{ this.renderVideoGrid(2, "VIDEOS & ANIMATIONS (CTD)") }
 						<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
 					</div>	
@@ -257,6 +268,7 @@ class App extends React.Component {
 				<iframe 
 					className="video-player"
 					title="YouTube video player"
+					id = {id}
 					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
 					allowFullScreen
@@ -269,7 +281,7 @@ class App extends React.Component {
 
 	renderSection = target => {
 
-		if (target === "graphic") {
+		if (target === "graphic_designer") {
 			return <React.Fragment>{ this.renderGraphicDesigner() }</React.Fragment>;
 
 		} else {
