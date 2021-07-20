@@ -2,117 +2,67 @@ import React from 'react';
 import './style.css';
 
 // images imports
-import email_2 from './images/email_2.png';
-import email from './images/email.png';
-import flyers from './images/flyers.png';
-import icons from './images/icons.png';
-import logos from './images/logos.png';
-import websites from './images/websites.png';
 import pdf from './images/pdf.svg';
+import widget from './images/01_Graphic Designer/07.gif';
+import widget_2 from './images/01_Graphic Designer/08.gif';
+
+// pdf import
 // import portfolio from './portfolio.pdf'
-
-
-
-
-
-const videos = {
-	'playlist':'https://youtube.com/playlist?list=PL-BIii6OgNRoJqzUi5gmEAvpLc9im3eUH',
-	0:{
-		'title':'Animated logo (loop)',
-		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
-	},
-	1: {
-		'title':'Widget',
-		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
-	},
-	2: {
-		'title':'Facebook Motion Banner',
-		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
-	},
-	3: {
-		'title':'15 teaser videos (ebooks)',
-		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
-	},
-	4: {
-		'title':'4 teaser videos (articles)',
-		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
-	},
-	5: {
-		'title':'4 commercials',
-		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
-	},
-	6: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
-	},
-	7: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
-	},
-	8: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
-	},
-	9: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
-	},
-	10: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
-	},
-	11: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
-	},
-	12: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/tgbNymZ7vqY'
-	},
-	13: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/N3NXWRWXVK0'
-	},
-	14: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/TjtuqWwVHdU'
-	},
-	15: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/cyW5z-M2yzw'
-	},
-	16: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/zHhd7roXlcE'
-	},
-	17: {
-		'title':'Toto',
-		'link':'https://www.youtube.com/embed/-PCuYOwmbNo'
-	}
-}
 
 
 class App extends React.Component {
 
+	// config = undefined;
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			'isReady':false,
+		};
+
+		this.config = undefined;
+	}
+
 	componentDidMount() {
-		window.addEventListener("fullscreenchange", event => {
-			if (!document.fullscreenElement) {
-				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
-	    		window.scrollTo(0, scrollPosition)
-			} 
-		}, false);
-		window.addEventListener("mozfullscreenchange", event => {
-			if (!document.fullscreenElement) {
-				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
-	    		window.scrollTo(0, scrollPosition)
-			} 
-		}, false);
-		window.addEventListener("webkitfullscreenchange", event => {
-			if (!document.fullscreenElement) {
-				var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
-	    		window.scrollTo(0, scrollPosition)
-			} 
-		}, false);
+
+		if (this.config === undefined) {
+			this.fetchConfig().then(json => {
+				this.config = json;
+				this.setState({isReady:true});
+			});
+
+		}
+
+		window.addEventListener("fullscreenchange", this.onFullScreenChange);
+		window.addEventListener("mozfullscreenchange", this.onFullScreenChange);
+		window.addEventListener("webkitfullscreenchange", this.onFullScreenChange);
+	}
+
+
+	componentWillUnmount() {
+		window.removeEventListener('fullscreenchange', this.onFullScreenChange);
+		window.removeEventListener('mozfullscreenchange', this.onFullScreenChange);
+		window.removeEventListener('webkitfullscreenchange', this.onFullScreenChange);
+	}
+
+
+	fetchConfig() {
+		var p = new Promise(resolve => {
+			fetch('data.json').then(response => {
+				return response.json();
+	        }).then(json => {
+	        	resolve(json);
+	        })
+	    });
+	    return p;
+	}
+
+	onFullScreenChange() {
+		if (!document.fullscreenElement) {
+			var scrollPosition = document.getElementById("video-grid").getBoundingClientRect().top;
+	    	window.scrollTo(0, scrollPosition)
+		} 
 	}
 
 	handleLoad(event, href) {
@@ -164,7 +114,10 @@ class App extends React.Component {
 	}
 
 
-	renderTitle = title => {
+	renderTitle = target => {
+
+		var title = this.config.visuals[target]['title'];
+
 		return (
 			<React.Fragment>
 				<h1 className={['title', 'center'].join(' ')}> {title} </h1>
@@ -173,7 +126,6 @@ class App extends React.Component {
 		)
 
 	}
-
 
 	renderSectionTitle = title => {
 		return (
@@ -185,63 +137,30 @@ class App extends React.Component {
 	} 
 
 	renderGraphicDesigner = () => {
+		var videos = this.config["videos"];
+		var content = this.config.visuals.graphic_designer;
 
 		return (
 			<React.Fragment>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("FLYERS") }
-						<span onClick={e => this.handleLoad(e, flyers)}>
-							<img className="image" title="flyers.png" src={flyers} loading="lazy" alt="flyers"/>
-						</span>
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("WEBSITES AND LANDING PAGES") }
-						<span onClick={e => this.handleLoad(e, websites)}>
-							<img className="image" title="websites.png" src={websites} loading="lazy" alt="websites" />
-						</span>
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("EMAILS") }
-						<span onClick={e => this.handleLoad(e, email)}>
-							<img className="image" title="email.png" src={email} loading="lazy" alt="emails"/>
-						</span>
-					</div>	
-				</div>
-				<div className="ui section divider"></div>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("EMAILS (CTD)") }
-						<span onClick={e => this.handleLoad(e, email_2)}>
-							<img className="image" title="email_2.png" src={email_2} loading="lazy" alt="emails" />
-						</span>
-					</div>	
-				</div>
-				<div className="ui section divider"></div>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("LOGOS") }
-						<span onClick={e => this.handleLoad(e, logos)}>
-							<img className="image" title="logos.png" src={logos} loading="lazy" alt="logos"/>
-						</span>
-					</div>	
-				</div>
-				<div className="ui section divider"></div>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("ICONS LIBRARY") }
-						<span onClick={e => this.handleLoad(e, icons)}>
-							<img className="image" title="icons.png" src={icons} loading="lazy" alt="icons"/>
-						</span>
-					</div>	
-				</div>
-				<div className="ui section divider"></div>
+				{
+					React.Children.toArray(
+						Object.keys(content.pages).map((item, i) => {
+							return (
+								<React.Fragment>
+									<div className="container">
+										<div className="block">
+											{ this.renderSectionTitle(content.pages[item].title) }
+											<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
+												<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
+											</span>
+										</div>
+									</div>
+									<div className="ui section divider"></div>
+								</React.Fragment>
+							)
+						})
+					)
+				}
 				<div className="container">
 					<div id = "video-grid" className="block">
 						{ this.renderVideoGrid(0, "VIDEOS & ANIMATIONS") }
@@ -264,13 +183,21 @@ class App extends React.Component {
 				</div>
 				<div className="ui section divider"></div>
 			</React.Fragment>
-
 		)
+
 	}
 
 
 	renderVideoGrid = (sectionNumber, title) => {
 		var offset = 6 * sectionNumber;
+		var videos = this.config["videos"];
+		var target_1 = (<React.Fragment>{this.renderVideoPlayer(offset+1)}</React.Fragment>)
+		var target_2 = (<React.Fragment>{this.renderVideoPlayer(offset+2)}</React.Fragment>)
+
+		if (sectionNumber === 0) {
+			target_1 = (<img className="gif" src={widget} alt="CF widget"/>)
+			target_2 = (<img className="gif" src={widget_2} alt="How to go from there" />)
+		} 
 
 		return (
 			<React.Fragment>
@@ -284,14 +211,14 @@ class App extends React.Component {
 							</div>
 						</div>
 						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+1)}
+							<div className="ui center aligned segment">
+								{target_1}
 								<p className="video-title">{videos[offset+1].title}</p>
 							</div>
 						</div>
 						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+2)}
+							<div className="ui center aligned segment">
+								{target_2}
 								<p className="video-title">{videos[offset+2].title}</p>
 							</div>
 						</div>
@@ -319,26 +246,11 @@ class App extends React.Component {
 				</div>
 			</React.Fragment>
 		)
-
 	}
 
-	renderPackagingDesigner = () => {
-
-		return (
-			<React.Fragment>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("TODO") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-			</React.Fragment>
-
-		)
-
-	}
 
 	renderVideoPlayer = (id) => {
+		var videos = this.config["videos"];
 		let videoLink = videos[id].link
 		return (
 			<React.Fragment>
@@ -355,156 +267,97 @@ class App extends React.Component {
 
 	}
 
-	renderInfographist = () => {
-
-		return (
-			<React.Fragment>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("TODO") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-			</React.Fragment>
-
-		)
-
-	}
-
-
-	renderGraphicAssistant = () => {
-
-		return (
-			<React.Fragment>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("TODO") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-			</React.Fragment>
-
-		)
-
-	}
-
-	renderPersonalCreations = () => {
-
-		return (
-			<React.Fragment>
-				<div className="container">
-					<div className="block">
-						{ this.renderSectionTitle("TODO") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-			</React.Fragment>
-
-		)
-
-	}
-
 	renderSection = target => {
 
-		switch (target) {
-
-		case "graphic":
+		if (target === "graphic") {
 			return <React.Fragment>{ this.renderGraphicDesigner() }</React.Fragment>;
 
-		case "packaging":
-			return <React.Fragment>{ this.renderPackagingDesigner() }</React.Fragment>;
+		} else {
 
-		case "infographist":
-			return <React.Fragment>{ this.renderInfographist() }</React.Fragment>;
+			var content = this.config.visuals[target];
 
-		case "assistant":
-			return <React.Fragment>{ this.renderGraphicAssistant() }</React.Fragment>;
+			return (
+				<React.Fragment>
+					{
+						React.Children.toArray(
+							Object.keys(content.pages).map((item, i) => {
+								return (
+									<React.Fragment>
+										<div className="container">
+											<div className="block">
+												{ this.renderSectionTitle(content.pages[item].title) }
+												<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
+													<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
+												</span>
+											</div>
+										</div>
+										<div className="ui section divider"></div>
+									</React.Fragment>
+								)
+							})
+						)
+					}
+				</React.Fragment>
+			)
 
-		case "personal":
-			return <React.Fragment>{ this.renderPersonalCreations() }</React.Fragment>;
+		} 
 
-		default:
-			return <div>Default</div>
-
-		}
 	}
 
 	render() {
-		return (
-			<React.Fragment>
-				{/*Download PDF*/}
-			{/*<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">*/}
-				<div id="pdf-button">
-					<a href="https://www.acoullandreau.com/portfolio_pierre/portfolio.pdf" target="_blank" rel="noreferrer" download="Pierre Coullandreau - Portfolio.pdf">
-						<img id="pdf-icon" title="Download PDF" src={pdf} alt="Download PDF" />
-					</a>
-				</div>
 
-				{/*Title*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderName() }
+		if (this.config !== undefined) {	
+
+			return (
+				<React.Fragment>
+					{/*Download PDF*/}
+				{/*<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">*/}
+					<div id="pdf-button">
+						<a href="https://www.acoullandreau.com/portfolio_pierre/portfolio.pdf" target="_blank" rel="noreferrer" download="Pierre Coullandreau - Portfolio.pdf">
+							<img id="pdf-icon" title="Download PDF" src={pdf} alt="Download PDF" />
+						</a>
 					</div>
-				</div>
-				<div className="ui section divider"></div>
 
-				{/*Graphic Designer*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderTitle("Graphic Designer") }
+					{/*Title*/}
+					<div className="container">
+						<div className="block">
+							{ this.renderName() }
+						</div>
 					</div>
-				</div>
-				<div className="ui section divider"></div>
-				{ this.renderSection("graphic") }
+					<div className="ui section divider"></div>
 
-				{/*Packaging Designer*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderTitle("Packaging Designer") }
+
+					{/*Sections*/}
+					{
+						React.Children.toArray(
+							Object.keys(this.config.sections).map((item, i) => {
+								let target = this.config.sections[item]
+								return (
+									<React.Fragment>
+										<div className="container">
+											<div className="block">
+												{ this.renderTitle(target) }
+											</div>
+										</div>
+										<div className="ui section divider"></div>
+										{ this.renderSection(target) }
+									</React.Fragment>
+								)
+							})
+						)
+					}
+
+					{/*Thank you*/}
+					<div className="container">
+						<div className="block">
+							{ this.renderThankYou() }
+						</div>
 					</div>
-				</div>
-				<div className="ui section divider"></div>
-				{ this.renderSection("packaging") }
 
-				{/*Infographist*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderTitle("Infographist") }
-					</div>
-				</div>
-
-				<div className="ui section divider"></div>
-				{ this.renderSection("infographist") }
-
-				{/*Graphic Assistant*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderTitle("Graphic Assistant") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-				{ this.renderSection("assistant") }
-
-				{/*Personal Creations*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderTitle("Personal Creations") }
-					</div>
-				</div>
-				<div className="ui section divider"></div>
-				{ this.renderSection("personal") }
-
-				{/*Thank you*/}
-				<div className="container">
-					<div className="block">
-						{ this.renderThankYou() }
-					</div>
-				</div>
-
-
-
-			</React.Fragment>
-		)
+				</React.Fragment>
+			)
+		}
+		return null;
 	}
 
 }

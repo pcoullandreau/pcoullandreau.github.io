@@ -1,0 +1,326 @@
+{
+	"sections":["graphic_designer", "packaging_designer", "infographist", "graphic_assistant", "item_designer", "tiny_house", "3D_designer"],
+	"videos": {
+		"playlist":"https://youtube.com/playlist?list=PL-BIii6OgNRoJqzUi5gmEAvpLc9im3eUH",
+		"0":{
+			"title":"Animated logo (loop)",
+			"link":"https://www.youtube.com/embed/uBZgI5v4lPc"
+		},
+		"1": {
+			"title":"Widget",
+			"link":""
+		},
+		"2": {
+			"title":"Widget",
+			"link":""
+		},
+		"3": {
+			"title":"Facebook Motion Banner",
+			"link":"https://www.youtube.com/embed/aRvudI4I3aQ"
+		},
+		"4": {
+			"title":"Mobile App Teaser",
+			"link":"https://www.youtube.com/embed/fReI5OUUQLA"
+		},
+		"5": {
+			"title":"Capital Funding Commercial",
+			"link":"https://www.youtube.com/embed/YdezltYTK0w"
+		},
+		"6": {
+			"title":"Ebook Teaser Video",
+			"link":"https://www.youtube.com/embed/UOaqefsyLEs"
+		},
+		"7": {
+			"title":"Ebook Teaser Video",
+			"link":"https://www.youtube.com/embed/9OQ1ZwdmBSg"
+		},
+		"8": {
+			"title":"Ebook Teaser Video",
+			"link":"https://www.youtube.com/embed/ljHU3nCBMbE"
+		},
+		"9": {
+			"title":"Ebook Teaser Video",
+			"link":"https://www.youtube.com/embed/pHtpP_dxhVs"
+		},
+		"10": {
+			"title":"Article Teaser Video",
+			"link":"https://www.youtube.com/embed/nuDtVyBeipo"
+		},
+		"11": {
+			"title":"Article Teaser Video",
+			"link":"https://www.youtube.com/embed/cCHr_tCJ0SI"
+		},
+		"12": {
+			"title":"Handdrawn Animation",
+			"link":"https://www.youtube.com/embed/wMjGgtUT4xE"
+		},
+		"13": {
+			"title":"Handdrawn Animation",
+			"link":"https://www.youtube.com/embed/nKeQV0PT2QY"
+		},
+		"14": {
+			"title":"Podcast Teaser",
+			"link":"https://www.youtube.com/embed/AS1Jngjd5aU"
+		},
+		"15": {
+			"title":"Radio Interview",
+			"link":"https://www.youtube.com/embed/QUfglJrvhyM"
+		},
+		"16": {
+			"title":"Commercial",
+			"link":"https://www.youtube.com/embed/Gjse8QW6CDc"
+		},
+		"17": {
+			"title":"Commercial",
+			"link":"https://www.youtube.com/embed/98YzCK3dU5k"
+		}
+	},
+	"visuals": {
+		"graphic_designer":{
+			"title":"Graphic Designer",
+			"pages":{
+				"0":{
+					"title":"FLYERS",
+					"alt":"Flyers",
+					"path":"images/01_Graphic Designer/01.png"
+				},
+				"1":{
+					"title":"WEBSITES AND LANDING PAGES",
+					"alt":"Websites",
+					"path":"images/01_Graphic Designer/02.png"
+				},
+				"2":{
+					"title":"EMAILS",
+					"alt":"Emails",
+					"path":"images/01_Graphic Designer/03.png"
+				},
+				"3":{
+					"title":"EMAILS (CTD)",
+					"alt":"Emails",
+					"path":"images/01_Graphic Designer/04.png"
+				},
+				"4":{
+					"title":"LOGOS",
+					"alt":"Logos",
+					"path":"images/01_Graphic Designer/05.png"
+				},
+				"5":{
+					"title":"ICONS LIBRARY",
+					"alt":"Icons",
+					"path":"images/01_Graphic Designer/06.png"
+				}
+			}
+		},
+		"packaging_designer":{
+			"title":"Packaging Designer",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"Life is Good Packaging",
+					"path":"./images/02_Packaging Designer/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"Free Country Packaging",
+					"path":"./images/02_Packaging Designer/02.png"
+				},
+				"2":{
+					"title":"",
+					"alt":"Free Country Packaging",
+					"path":"./images/02_Packaging Designer/03.png"
+				},
+				"3":{
+					"title":"",
+					"alt":"Free Country Packaging",
+					"path":"./images/02_Packaging Designer/04.png"
+				},
+				"4":{
+					"title":"",
+					"alt":"Free Country Packaging",
+					"path":"./images/02_Packaging Designer/05.png"
+				},
+				"5":{
+					"title":"",
+					"alt":"RO + ME",
+					"path":"./images/02_Packaging Designer/06.png"
+				}
+			}
+		},
+		"infographist":{
+			"title":"Infographist",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"Business Card",
+					"path":"./images/03_Infographist/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"Project expectations",
+					"path":"./images/03_Infographist/02.png"
+				},
+				"2":{
+					"title":"REPLY FORM",
+					"alt":"Reply Form",
+					"path":"./images/03_Infographist/03.png"
+				},
+				"3":{
+					"title":"FLYER (DONATION REQUEST)",
+					"alt":"Donation Request flyer",
+					"path":"./images/03_Infographist/04.png"
+				},
+				"4":{
+					"title":"FLYER (DONATION REQUEST)",
+					"alt":"Donation Request flyer",
+					"path":"./images/03_Infographist/05.png"
+				},
+				"5":{
+					"title":"FLYER (DONATION REQUEST)",
+					"alt":"Donation Request flyer",
+					"path":"./images/03_Infographist/06.png"
+				},
+				"6":{
+					"title":"FLYER (SEASONAL PRODUCT)",
+					"alt":"Seasonal Product flyer",
+					"path":"./images/03_Infographist/07.png"
+				},
+				"7":{
+					"title":"ADVERTISING SIGN (6.5 FT X 2.8 FT) & BUSINESS CARDS",
+					"alt":"Advertising sign and business cards",
+					"path":"./images/03_Infographist/08.png"
+				},
+				"8":{
+					"title":"",
+					"alt":"Stamps",
+					"path":"./images/03_Infographist/09.png"
+				},
+				"9":{
+					"title":"",
+					"alt":"Soap packaging",
+					"path":"./images/03_Infographist/10.png"
+				},
+				"10":{
+					"title":"",
+					"alt":"Soap packaging",
+					"path":"./images/03_Infographist/11.png"
+				},
+				"11":{
+					"title":"",
+					"alt":"Beverage packaging",
+					"path":"./images/03_Infographist/12.png"
+				}
+			}
+		},
+		"graphic_assistant":{
+			"title":"Graphic Assistant",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"Graphic creation",
+					"path":"./images/04_Graphic Assistant/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"Graphic creation",
+					"path":"./images/04_Graphic Assistant/02.png"
+				}
+			}
+		},
+		"item_designer":{
+			"title":"Item Designer",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"Item creation",
+					"path":"./images/05_Item Designer/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"Item creation",
+					"path":"./images/05_Item Designer/02.png"
+				}
+			}
+		},
+		"tiny_house":{
+			"title":"Tiny House",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"Tiny House Design",
+					"path":"./images/06_Tiny House/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"Tiny House Design",
+					"path":"./images/06_Tiny House/02.png"
+				},
+				"2":{
+					"title":"",
+					"alt":"Tiny House Pictures",
+					"path":"./images/06_Tiny House/03.png"
+				},
+				"3":{
+					"title":"",
+					"alt":"Tiny House Design",
+					"path":"./images/06_Tiny House/04.png"
+				},
+				"4":{
+					"title":"",
+					"alt":"Tiny House Pictures",
+					"path":"./images/06_Tiny House/05.png"
+				}
+			}
+		},
+		"3D_designer":{
+			"title":"3D Designer",
+			"pages":{
+				"0":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/01.png"
+				},
+				"1":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/02.png"
+				},
+				"2":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/03.png"
+				},
+				"3":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/04.png"
+				},
+				"4":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/05.png"
+				},
+				"5":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/06.png"
+				},
+				"6":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/07.png"
+				},
+				"7":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/08.png"
+				},
+				"8":{
+					"title":"",
+					"alt":"3D design",
+					"path":"./images/07_3D Designer/09.png"
+				}
+			}
+		}
+	}
+
+}
