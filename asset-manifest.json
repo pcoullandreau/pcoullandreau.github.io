@@ -1,27 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d77ecc81.chunk.css",
-    "main.js": "/static/js/main.972ecda2.chunk.js",
-    "main.js.map": "/static/js/main.972ecda2.chunk.js.map",
+    "main.css": "/static/css/main.d1fa7aef.chunk.css",
+    "main.js": "/static/js/main.f0e1ec38.chunk.js",
+    "main.js.map": "/static/js/main.f0e1ec38.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19141b10.js",
     "runtime-main.js.map": "/static/js/runtime-main.19141b10.js.map",
     "static/js/2.ebec1c09.chunk.js": "/static/js/2.ebec1c09.chunk.js",
     "static/js/2.ebec1c09.chunk.js.map": "/static/js/2.ebec1c09.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.d77ecc81.chunk.css.map": "/static/css/main.d77ecc81.chunk.css.map",
-    "static/js/2.ebec1c09.chunk.js.LICENSE.txt": "/static/js/2.ebec1c09.chunk.js.LICENSE.txt",
-    "static/media/email.c301adfc.png": "/static/media/email.c301adfc.png",
-    "static/media/email_2.741f740a.png": "/static/media/email_2.741f740a.png",
-    "static/media/flyers.97f65b2b.png": "/static/media/flyers.97f65b2b.png",
-    "static/media/icons.e06144be.png": "/static/media/icons.e06144be.png",
-    "static/media/logos.53dc2c45.png": "/static/media/logos.53dc2c45.png",
-    "static/media/pdf.17db872d.svg": "/static/media/pdf.17db872d.svg",
-    "static/media/websites.245d64a8.png": "/static/media/websites.245d64a8.png"
+    "static/css/main.d1fa7aef.chunk.css.map": "/static/css/main.d1fa7aef.chunk.css.map",
+    "static/js/2.ebec1c09.chunk.js.LICENSE.txt": "/static/js/2.ebec1c09.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.19141b10.js",
     "static/js/2.ebec1c09.chunk.js",
-    "static/css/main.d77ecc81.chunk.css",
-    "static/js/main.972ecda2.chunk.js"
+    "static/css/main.d1fa7aef.chunk.css",
+    "static/js/main.f0e1ec38.chunk.js"
   ]
 }
