@@ -8,12 +8,6 @@ body {
 	overflow:scroll;
 }
 
-/*.slide {
-	height: 100vh;
-	width: 100vw;
-	background-color: #f2f3f4;
-}
-*/
 .container {
 	height: 800px;
 	width: 1016px;
@@ -43,19 +37,19 @@ body {
 }
 
 .address-line {
-	font-size:clamp(1.5vh, 2vh, 14px);
+	font-size:clamp(14px, min(2vh, 2vw), 21px);
 	line-height: clamp(2vh, 2.5vh, 20px);;
 	display: block;
 }
 
 .section-title {
 	padding-top: 5% !important;
-	font-size:clamp(2.5vh, 3vh, 18px);
+	font-size:clamp(22px, min(3vh, 3vw), 28px);
 } 
 
 .title {
 	font-family: 'Rokkitt', serif;
-	font-size:clamp(6vh, 7.5vh, 55px);
+	font-size:clamp(55px, min(7.5vh, 6.5vw), 61px);
 }
 
 .subtitle {
@@ -66,12 +60,12 @@ body {
 	margin-top: 5%;
 	text-align: center;
 	font-family: 'Montserrat', sans-serif;
-	font-size:clamp(3vh, 3.5vh, 25px);
+	font-size:clamp(25px, min(3.5vh, 3vw), 31px);
 }
 
 .name {
 	font-family: 'Montserrat', sans-serif;
-	font-size:clamp(5vh, 7vh, 50px);
+	font-size:clamp(45px, min(7vh, 5vw), 51px);
 }
 
 .image {
@@ -88,12 +82,12 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
-	font-size:clamp(1.5vh, 2vh, 14px);
+	font-size:clamp(14px, min(2vh, 2vw), 21px);
 }
 
 .video-player {
 	width: 100%;
-	height: 25vh;
+	height: min(25vh, 20vw);
 }
 
 .video-page-player {
@@ -105,7 +99,7 @@ body {
 }
 
 .gif {
-	height: 25vh;
+	height: min(25vh, 20vw);
 } 
 
 .ui.divider {
