@@ -87,7 +87,7 @@ body {
 
 .video-player {
 	width: 100%;
-	height: min(25vh, 20vw);
+	height: min(250px, min(25vh, 20vw));
 }
 
 .video-page-player {
@@ -99,7 +99,7 @@ body {
 }
 
 .gif {
-	height: min(25vh, 20vw);
+	height: min(250px, min(25vh, 20vw));
 } 
 
 .ui.divider {
@@ -115,7 +115,7 @@ body {
 	top: 20%;
 	transform: translate(0%, -20%);
 	margin: 0;
-	height: 7.5vh;
+	height: max(7.5vh, 7vw);
 }
 
 .ui.grid .column {
