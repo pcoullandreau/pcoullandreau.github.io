@@ -1,5 +1,4 @@
 {
-	"sections":["graphic_designer", "packaging_designer", "infographist", "graphic_assistant", "item_designer", "tiny_house", "3D_designer"],
 	"videos": {
 		"playlist":"https://youtube.com/playlist?list=PL-BIii6OgNRoJqzUi5gmEAvpLc9im3eUH",
 		"100":{
@@ -79,6 +78,7 @@
 			"link":"https://www.youtube.com/embed/98YzCK3dU5k"
 		}
 	},
+	"sections":["graphic_designer", "packaging_designer", "print_designer", "graphic_assistant", "item_designer", "housing_designer", "3D_designer"],
 	"visuals": {
 		"graphic_designer":{
 			"title":"Graphic Designer",
@@ -86,32 +86,38 @@
 				"0":{
 					"title":"FLYERS",
 					"alt":"Flyers",
-					"path":"/images/01_Graphic Designer/01.png"
+					"high":"/images/high_res/01_Graphic Designer/01.png",
+					"path":"/images/low_res/01_Graphic Designer/01.png"
 				},
 				"1":{
 					"title":"WEBSITES AND LANDING PAGES",
 					"alt":"Websites",
-					"path":"images/01_Graphic Designer/02.png"
+					"high":"/images/high_res/01_Graphic Designer/02.png",
+					"path":"/images/low_res/01_Graphic Designer/02.png"
 				},
 				"2":{
 					"title":"EMAILS",
 					"alt":"Emails",
-					"path":"images/01_Graphic Designer/03.png"
+					"high":"/images/high_res/01_Graphic Designer/03.png",
+					"path":"/images/low_res/01_Graphic Designer/03.png"
 				},
 				"3":{
 					"title":"EMAILS (CTD)",
 					"alt":"Emails",
-					"path":"images/01_Graphic Designer/04.png"
+					"high":"/images/high_res/01_Graphic Designer/04.png",
+					"path":"/images/low_res/01_Graphic Designer/04.png"
 				},
 				"4":{
 					"title":"LOGOS",
 					"alt":"Logos",
-					"path":"images/01_Graphic Designer/05.png"
+					"high":"/images/high_res/01_Graphic Designer/05.png",
+					"path":"/images/low_res/01_Graphic Designer/05.png"
 				},
 				"5":{
 					"title":"ICONS LIBRARY",
 					"alt":"Icons",
-					"path":"images/01_Graphic Designer/06.png"
+					"high":"/images/high_res/01_Graphic Designer/06.png",
+					"path":"/images/low_res/01_Graphic Designer/06.png"
 				}
 			}
 		},
@@ -121,97 +127,115 @@
 				"0":{
 					"title":"",
 					"alt":"Life is Good Packaging",
-					"path":"./images/02_Packaging Designer/01.png"
+					"high":"/images/high_res/02_Packaging Designer/01.png",
+					"path":"./images/low_res/02_Packaging Designer/01.png"
 				},
 				"1":{
 					"title":"",
 					"alt":"Free Country Packaging",
-					"path":"./images/02_Packaging Designer/02.png"
+					"high":"/images/high_res/02_Packaging Designer/02.png",
+					"path":"./images/low_res/02_Packaging Designer/02.png"
 				},
 				"2":{
 					"title":"",
 					"alt":"Free Country Packaging",
-					"path":"./images/02_Packaging Designer/03.png"
+					"high":"/images/high_res/02_Packaging Designer/03.png",
+					"path":"./images/low_res/02_Packaging Designer/03.png"
 				},
 				"3":{
 					"title":"",
 					"alt":"Free Country Packaging",
-					"path":"./images/02_Packaging Designer/04.png"
+					"high":"/images/high_res/02_Packaging Designer/04.png",
+					"path":"./images/low_res/02_Packaging Designer/04.png"
 				},
 				"4":{
 					"title":"",
 					"alt":"Free Country Packaging",
-					"path":"./images/02_Packaging Designer/05.png"
+					"high":"/images/high_res/02_Packaging Designer/05.png",
+					"path":"./images/low_res/02_Packaging Designer/05.png"
 				},
 				"5":{
 					"title":"",
 					"alt":"RO + ME",
-					"path":"./images/02_Packaging Designer/06.png"
+					"high":"/images/high_res/02_Packaging Designer/06.png",
+					"path":"./images/low_res/02_Packaging Designer/06.png"
 				}
 			}
 		},
-		"infographist":{
-			"title":"Infographist",
+		"print_designer":{
+			"title":"Print Designer",
 			"pages":{
 				"0":{
 					"title":"",
 					"alt":"Business Card",
-					"path":"./images/03_Infographist/01.png"
+					"high":"/images/high_res/03_Print Designer/01.png",
+					"path":"./images/low_res/03_Print Designer/01.png"
 				},
 				"1":{
 					"title":"",
 					"alt":"Project expectations",
-					"path":"./images/03_Infographist/02.png"
+					"high":"/images/high_res/03_Print Designer/02.png",
+					"path":"./images/low_res/03_Print Designer/02.png"
 				},
 				"2":{
 					"title":"REPLY FORM",
 					"alt":"Reply Form",
-					"path":"./images/03_Infographist/03.png"
+					"high":"/images/high_res/03_Print Designer/03.png",
+					"path":"./images/low_res/03_Print Designer/03.png"
 				},
 				"3":{
 					"title":"FLYER (DONATION REQUEST)",
 					"alt":"Donation Request flyer",
-					"path":"./images/03_Infographist/04.png"
+					"high":"/images/high_res/03_Print Designer/04.png",
+					"path":"./images/low_res/03_Print Designer/04.png"
 				},
 				"4":{
 					"title":"FLYER (DONATION REQUEST)",
 					"alt":"Donation Request flyer",
-					"path":"./images/03_Infographist/05.png"
+					"high":"/images/high_res/03_Print Designer/05.png",
+					"path":"./images/low_res/03_Print Designer/05.png"
 				},
 				"5":{
 					"title":"FLYER (DONATION REQUEST)",
 					"alt":"Donation Request flyer",
-					"path":"./images/03_Infographist/06.png"
+					"high":"/images/high_res/03_Print Designer/06.png",
+					"path":"./images/low_res/03_Print Designer/06.png"
 				},
 				"6":{
 					"title":"FLYER (SEASONAL PRODUCT)",
 					"alt":"Seasonal Product flyer",
-					"path":"./images/03_Infographist/07.png"
+					"high":"/images/high_res/03_Print Designer/07.png",
+					"path":"./images/low_res/03_Print Designer/07.png"
 				},
 				"7":{
 					"title":"ADVERTISING SIGN (6.5 FT X 2.8 FT) & BUSINESS CARDS",
 					"alt":"Advertising sign and business cards",
-					"path":"./images/03_Infographist/08.png"
+					"high":"/images/high_res/03_Print Designer/08.png",
+					"path":"./images/low_res/03_Print Designer/08.png"
 				},
 				"8":{
 					"title":"",
 					"alt":"Stamps",
-					"path":"./images/03_Infographist/09.png"
+					"high":"/images/high_res/03_Print Designer/09.png",
+					"path":"./images/low_res/03_Print Designer/09.png"
 				},
 				"9":{
 					"title":"",
 					"alt":"Soap packaging",
-					"path":"./images/03_Infographist/10.png"
+					"high":"/images/high_res/03_Print Designer/10.png",
+					"path":"./images/low_res/03_Print Designer/10.png"
 				},
 				"10":{
 					"title":"",
 					"alt":"Soap packaging",
-					"path":"./images/03_Infographist/11.png"
+					"high":"/images/high_res/03_Print Designer/11.png",
+					"path":"./images/low_res/03_Print Designer/11.png"
 				},
 				"11":{
 					"title":"",
 					"alt":"Beverage packaging",
-					"path":"./images/03_Infographist/12.png"
+					"high":"/images/high_res/03_Print Designer/12.png",
+					"path":"./images/low_res/03_Print Designer/12.png"
 				}
 			}
 		},
@@ -221,57 +245,60 @@
 				"0":{
 					"title":"",
 					"alt":"Graphic creation",
-					"path":"./images/04_Graphic Assistant/01.png"
+					"high":"/images/high_res/04_Graphic Assistant/01.png",
+					"path":"./images/low_res/04_Graphic Assistant/01.png"
 				},
 				"1":{
 					"title":"",
 					"alt":"Graphic creation",
-					"path":"./images/04_Graphic Assistant/02.png"
+					"high":"/images/high_res/04_Graphic Assistant/02.png",
+					"path":"./images/low_res/04_Graphic Assistant/02.png"
 				}
 			}
 		},
 		"item_designer":{
-			"title":"Item Designer",
+			"title":"Furniture Designer",
 			"pages":{
 				"0":{
 					"title":"",
-					"alt":"Item creation",
-					"path":"./images/05_Item Designer/01.png"
+					"alt":"Furniture creation",
+					"high":"/images/high_res/05_Furniture Designer/01.png",
+					"path":"./images/low_res/05_Furniture Designer/01.png"
 				},
 				"1":{
 					"title":"",
-					"alt":"Item creation",
-					"path":"./images/05_Item Designer/02.png"
+					"alt":"Furniture creation",
+					"high":"/images/high_res/05_Furniture Designer/02.png",
+					"path":"./images/low_res/05_Furniture Designer/02.png"
 				}
 			}
 		},
-		"tiny_house":{
-			"title":"Tiny House",
+		"housing_designer":{
+			"title":"Housing Designer",
 			"pages":{
 				"0":{
 					"title":"",
 					"alt":"Tiny House Design",
-					"path":"./images/06_Tiny House/01.png"
+					"high":"/images/high_res/06_Housing Designer/01.png",
+					"path":"./images/low_res/06_Housing Designer/01.png"
 				},
 				"1":{
 					"title":"",
 					"alt":"Tiny House Design",
-					"path":"./images/06_Tiny House/02.png"
+					"high":"/images/high_res/06_Housing Designer/02.png",
+					"path":"./images/low_res/06_Housing Designer/02.png"
 				},
 				"2":{
 					"title":"",
 					"alt":"Tiny House Pictures",
-					"path":"./images/06_Tiny House/03.png"
+					"high":"/images/high_res/06_Housing Designer/03.png",
+					"path":"./images/low_res/06_Housing Designer/03.png"
 				},
 				"3":{
 					"title":"",
 					"alt":"Tiny House Design",
-					"path":"./images/06_Tiny House/04.png"
-				},
-				"4":{
-					"title":"",
-					"alt":"Tiny House Pictures",
-					"path":"./images/06_Tiny House/05.png"
+					"high":"/images/high_res/06_Housing Designer/04.png",
+					"path":"./images/low_res/06_Housing Designer/04.png"
 				}
 			}
 		},
@@ -281,47 +308,56 @@
 				"0":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/01.png"
+					"high":"/images/high_res/07_3D Designer/01.png",
+					"path":"./images/low_res/07_3D Designer/01.png"
 				},
 				"1":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/02.png"
+					"high":"/images/high_res/07_3D Designer/02.png",
+					"path":"./images/low_res/07_3D Designer/02.png"
 				},
 				"2":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/03.png"
+					"high":"/images/high_res/07_3D Designer/03.png",
+					"path":"./images/low_res/07_3D Designer/03.png"
 				},
 				"3":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/04.png"
+					"high":"/images/high_res/07_3D Designer/04.png",
+					"path":"./images/low_res/07_3D Designer/04.png"
 				},
 				"4":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/05.png"
+					"high":"/images/high_res/07_3D Designer/05.png",
+					"path":"./images/low_res/07_3D Designer/05.png"
 				},
 				"5":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/06.png"
+					"high":"/images/high_res/07_3D Designer/06.png",
+					"path":"./images/low_res/07_3D Designer/06.png"
 				},
 				"6":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/07.png"
+					"high":"/images/high_res/07_3D Designer/07.png",
+					"path":"./images/low_res/07_3D Designer/07.png"
 				},
 				"7":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/08.png"
+					"high":"/images/high_res/07_3D Designer/08.png",
+					"path":"./images/low_res/07_3D Designer/08.png"
 				},
 				"8":{
 					"title":"",
 					"alt":"3D design",
-					"path":"./images/07_3D Designer/09.png"
+					"high":"/images/high_res/07_3D Designer/09.png",
+					"path":"./images/low_res/07_3D Designer/09.png"
 				}
 			}
 		}
