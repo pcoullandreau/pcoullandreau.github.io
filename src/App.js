@@ -158,7 +158,7 @@ class App extends React.Component {
 									<div className="container">
 										<div className="block">
 											{ this.renderSectionTitle(content.pages[item].title) }
-											<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
+											<span onClick={e => this.handleLoad(e, content.pages[item].high)}>
 												<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
 											</span>
 										</div>
@@ -203,8 +203,8 @@ class App extends React.Component {
 		var target_2 = (<React.Fragment>{this.renderVideoPlayer(offset+2)}</React.Fragment>)
 
 		if (sectionNumber === 0) {
-			target_1 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/01_Graphic Designer/07.gif`} alt="CF widget"/>)
-			target_2 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/01_Graphic Designer/08.gif`} alt="How to go from there" />)
+			target_1 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/07.gif`} alt="CF widget"/>)
+			target_2 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/08.gif`} alt="How to go from there" />)
 		} 
 
 		return (
