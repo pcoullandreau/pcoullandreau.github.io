@@ -139,6 +139,7 @@ body {
 
 .gif {
 	height: min(250px, min(25vh, 20vw));
+	min-height: 250px;
 } 
 
 .ui.divider {
