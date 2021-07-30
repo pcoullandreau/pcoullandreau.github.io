@@ -158,9 +158,12 @@ class App extends React.Component {
 									<div className="container">
 										<div className="block">
 											{ this.renderSectionTitle(content.pages[item].title) }
-											<span onClick={e => this.handleLoad(e, content.pages[item].high)}>
-												<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
-											</span>
+											<div className="overlay-image">
+												<img className="image" src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
+												<div className="hover" title={`${content.pages[item].alt}.png`} onClick={e => this.handleLoad(e, content.pages[item].high)}>
+													<div className="overlay-text">Click to enlarge</div>
+												</div>
+											</div>
 										</div>
 									</div>
 									<div className="ui section divider"></div>
@@ -326,9 +329,12 @@ class App extends React.Component {
 											<div className="container">
 												<div className="block">
 													{ this.renderSectionTitle(content.pages[item].title) }
-													<span onClick={e => this.handleLoad(e, content.pages[item].path)}>
-														<img className="image" title={`${content.pages[item].alt}.png`} src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
-													</span>
+													<div className="overlay-image">
+														<img className="image" src={content.pages[item].path} loading="lazy" alt={content.pages[item].alt}/>
+														<div className="hover" title={`${content.pages[item].alt}.png`} onClick={e => this.handleLoad(e, content.pages[item].high)}>
+															<div className="overlay-text">Click to enlarge</div>
+														</div>
+													</div>
 												</div>
 											</div>
 											<div className="ui section divider"></div>
