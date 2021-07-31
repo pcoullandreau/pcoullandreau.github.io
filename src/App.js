@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import Section from './Section.js';
+import SideNavBar from './SideNavBar.js';
 
 // pdf import
 // import portfolio from './portfolio.pdf'
@@ -13,6 +14,7 @@ class App extends React.Component {
 
 		this.state = {
 			'isReady':false,
+			'currentSection':'',
 			'scrollPosition':0,
 			'VideoAnchorPosition':0
 		};
@@ -30,6 +32,7 @@ class App extends React.Component {
 
 		}
 
+		window.addEventListener('scroll', this.handleScroll());
 		window.addEventListener("fullscreenchange", this.onFullScreenChange);
 		window.addEventListener("mozfullscreenchange", this.onFullScreenChange);
 		window.addEventListener("webkitfullscreenchange", this.onFullScreenChange);
@@ -37,6 +40,7 @@ class App extends React.Component {
 
 
 	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll());
 		window.removeEventListener('fullscreenchange', this.onFullScreenChange);
 		window.removeEventListener('mozfullscreenchange', this.onFullScreenChange);
 		window.removeEventListener('webkitfullscreenchange', this.onFullScreenChange);
@@ -88,6 +92,17 @@ class App extends React.Component {
 		event.returnValue =  false;
 	}
 
+	handleScroll = event => {
+		console.log(event)
+	} 
+
+	updateScrollPosition = targetSection => {
+		var scrollPosition = document.getElementById(targetSection).getBoundingClientRect().top;
+		this.setState({scrollPosition}, () => {
+			window.scrollBy(0, scrollPosition)
+		})
+
+	}
 
 	renderName = () => {
 		return (
@@ -121,7 +136,8 @@ class App extends React.Component {
 
 			return (
 				<React.Fragment>
-					{/*{ this.renderNavBar() }*/}
+					<SideNavBar config={this.config} selection={this.state.currentSection} updateScrollPosition={this.updateScrollPosition}/>
+
 					{/*Download PDF*/}
 				{/*<a href={portfolio} download="Pierre Coullandreau - Portfolio.pdf">*/}
 					<div id="pdf-button">

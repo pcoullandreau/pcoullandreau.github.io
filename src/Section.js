@@ -146,7 +146,7 @@ class Section extends React.Component {
 
 		return (
 			<React.Fragment>
-				<div className="container">
+				<div className="container" id={target}>
 					<div className="block">
 						{ this.renderTitle(target) }
 					</div>

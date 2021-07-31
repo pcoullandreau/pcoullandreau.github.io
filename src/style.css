@@ -196,3 +196,32 @@ body {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1603%) hue-rotate(176deg) brightness(96%) contrast(99%);
 }
 
+.nav-bar {
+	position: fixed;
+	left: 3vh;
+	top: 3vh;
+	width: 3%;
+} 
+
+.nav-bar-button {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	margin-top: 10%;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	border: none;
+	background-color: #16141266;
+	z-index: 10;
+}
+
+
+/*.nav-bar-button:hover {
+	cursor: pointer;
+	height: 40px;
+	width: 40px;
+	background-color: #EC1A2B;
+	transition: .5s ease;
+}*/
+

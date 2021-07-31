@@ -4,47 +4,53 @@ import PropTypes from 'prop-types';
 
 class SideNavBar extends React.Component {
 
-	state = { activeItem: '',  'matchPages':{'':'home', '#graphs':'chart bar', '#help':'help'} };
+	state = {selected:''}  
 
 	componentDidMount() {
 		this.onLocationChange();
 	}
 
-	componentDidUpdate() {
-		window.addEventListener('popstate', this.onLocationChange);
-	}
-
 	onLocationChange = () => {
-		var selectedPage = this.state.matchPages[window.location.hash];
-		this.setState({ activeItem: selectedPage });
+		var selectedSection = this.props.selection;
+		this.setState({ selected: selectedSection });
     };
 
 
-	handleItemClick = (e, { name, to }) => {
-		if (e.metaKey || e.ctrlKey) {
-			var target = window.location.href.replace('#', to)
-			window.open(target, "_blank")
-			return;
-		}
-
-		this.setState({ activeItem: name });
-		window.history.pushState({}, '', to);
-
-		const navEvent = new PopStateEvent('popstate');
-		window.dispatchEvent(navEvent);
+	handleItemClick = (e) => {
+		var targetSection = e.target.name
+		this.setState({selected:targetSection}, () => {
+			this.props.updateScrollPosition(targetSection)
+		});
 
 	}
 
 	render () {
 		return (
-			<React.Fragment>
-				<div style={{margin:'10px'}}>
-					<button></button>
-				</div>
-				<div style={{margin:'10px'}} >
-					<button></button>
-				</div>
-			</React.Fragment>
+			<div className="nav-bar">
+				{
+					React.Children.toArray(
+						Object.keys(this.props.config.sections).map((item, i) => {
+							var target = this.props.config.sections[item]
+							var backgroundColor = "#16141266";
+							if (this.state.selected === target) {
+								backgroundColor = "#EC1A2B";
+							}
+							return (
+								<React.Fragment>
+									<button 
+										className="nav-bar-button"
+										id ={`nav-bar-button-${item}`} 
+										name={target}
+										style = {{backgroundColor:backgroundColor}} 
+										onClick={this.handleItemClick}
+									>
+									</button>
+								</React.Fragment>
+							)
+						})
+					)
+				}
+			</div>
 		);
 
 	}
@@ -53,6 +59,8 @@ class SideNavBar extends React.Component {
 // props validation
 SideNavBar.propTypes = {
    selection: PropTypes.string,
+   config:PropTypes.object,
+   updateScrollPosition:PropTypes.func
 }
 
 
