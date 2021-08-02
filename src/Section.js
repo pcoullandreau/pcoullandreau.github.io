@@ -8,7 +8,7 @@ class Section extends React.Component {
 
 	renderSubtitle = () => {
 		return (
-			<h2 className="subtitle"> Personal artistic book </h2>
+			<h2 className="Subtitle"> Personal artistic book </h2>
 
 		)
 	}
@@ -19,7 +19,7 @@ class Section extends React.Component {
 
 		return (
 			<React.Fragment>
-				<h1 className={['title', 'center'].join(' ')}> {title} </h1>
+				<h1 className={['Title', 'center'].join(' ')}> {title} </h1>
 				{this.renderSubtitle()}
 			</React.Fragment>
 		)
@@ -29,7 +29,7 @@ class Section extends React.Component {
 	renderSectionTitle = title => {
 		return (
 			<React.Fragment>
-				<h3 className="section-title"> {title} </h3>
+				<h3 className="SectionTitle"> {title} </h3>
 			</React.Fragment>
 		)
 
@@ -43,10 +43,10 @@ class Section extends React.Component {
 		return (
 			<React.Fragment>
 				<div className="container">
-					<div id = "video-page" className="block">
+					<div id = "VideoPage" className="block">
 						{ this.renderSectionTitle(videoTitle) }
 						<iframe 
-							className="video-page-player"
+							className="VideoPagePlayer"
 							title="YouTube video player"
 							id = {id}
 							frameBorder="0"
@@ -67,10 +67,10 @@ class Section extends React.Component {
 				<div className="container">
 					<div className="block">
 						{ this.renderSectionTitle(target.title) }
-						<div className="overlay-image">
+						<div className="OverlayImage">
 							<img className="image" src={target.path} loading="lazy" alt={target.alt}/>
 							<div className="hover" title={`${target.alt}.png`} onClick={e => this.props.onImageClick(e, target.high)}>
-								<div className="overlay-text">Click to enlarge</div>
+								<div className="OverlayText">Click to enlarge</div>
 							</div>
 						</div>
 					</div>

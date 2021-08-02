@@ -144,10 +144,10 @@ class App extends React.Component {
 	renderName = () => {
 		return (
 			<React.Fragment>
-				<h1 className={['name', 'center'].join(' ')}> Pierre Coullandreau </h1>	
-				<h2 className="subtitle"> Personal artistic book </h2>
+				<h1 className={['Name', 'center'].join(' ')}> Pierre Coullandreau </h1>	
+				<h2 className="Subtitle"> Personal artistic book </h2>
 				<div id="address">
-					<span className="address-line">pierre.cldr@gmail.com</span>
+					<span className="AddressLine">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
 
@@ -157,10 +157,10 @@ class App extends React.Component {
 	renderThankYou = () => {
 		return (
 			<React.Fragment>
-				<h1 className={['name', 'center'].join(' ')}> Thank you </h1>
-				<h2 className="subtitle"> Pierre Coullandreau </h2>
+				<h1 className={['Name', 'center'].join(' ')}> Thank you </h1>
+				<h2 className="Subtitle"> Pierre Coullandreau </h2>
 				<div id="address">
-					<span className="address-line">pierre.cldr@gmail.com</span>
+					<span className="AddressLine">pierre.cldr@gmail.com</span>
 				</div>
 			</React.Fragment>
 

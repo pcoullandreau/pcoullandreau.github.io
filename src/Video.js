@@ -39,19 +39,19 @@ class Video extends React.Component {
 						<div className="column">
 							<div className="ui segment">
 								{this.renderVideoPlayer(offset+0)}
-								<p className="video-title">{videos[offset+0].title}</p>
+								<p className="VideoTitle">{videos[offset+0].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui center aligned segment">
 								{target_1}
-								<p className="video-title">{videos[offset+1].title}</p>
+								<p className="VideoTitle">{videos[offset+1].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui center aligned segment">
 								{target_2}
-								<p className="video-title">{videos[offset+2].title}</p>
+								<p className="VideoTitle">{videos[offset+2].title}</p>
 							</div>
 						</div>
 					 </div>
@@ -59,19 +59,19 @@ class Video extends React.Component {
 						<div className="column">
 							<div className="ui segment">
 								{this.renderVideoPlayer(offset+3)}
-								<p className="video-title">{videos[offset+3].title}</p>
+								<p className="VideoTitle">{videos[offset+3].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
 								{this.renderVideoPlayer(offset+4)}
-								<p className="video-title">{videos[offset+4].title}</p>
+								<p className="VideoTitle">{videos[offset+4].title}</p>
 							</div>
 						</div>
 						<div className="column">
 							<div className="ui segment">
 								{this.renderVideoPlayer(offset+5)}
-								<p className="video-title">{videos[offset+5].title}</p>
+								<p className="VideoTitle">{videos[offset+5].title}</p>
 							</div>
 						</div>
 					</div>
@@ -87,7 +87,7 @@ class Video extends React.Component {
 		return (
 			<React.Fragment>
 				<iframe 
-					className="video-player"
+					className="VideoPlayer"
 					title="YouTube video player"
 					id = {id}
 					frameBorder="0"
