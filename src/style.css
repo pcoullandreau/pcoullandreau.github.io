@@ -36,23 +36,23 @@ body {
 	transform: translate(-50%, -85%);
 }
 
-.address-line {
+.AddressLine {
 	font-size:clamp(14px, min(2vh, 2vw), 21px);
 	line-height: clamp(2vh, 2.5vh, 20px);;
 	display: block;
 }
 
-.section-title {
+.SectionTitle {
 	padding-top: 5% !important;
 	font-size:clamp(22px, min(3vh, 3vw), 28px);
 } 
 
-.title {
+.Title {
 	font-family: 'Rokkitt', serif;
 	font-size:clamp(55px, min(7.5vh, 6.5vw), 61px);
 }
 
-.subtitle {
+.Subtitle {
 	position: absolute;
 	top: 55%;
 	left: 50%;
@@ -63,12 +63,12 @@ body {
 	font-size:clamp(25px, min(3.5vh, 3vw), 31px);
 }
 
-.name {
+.Name {
 	font-family: 'Montserrat', sans-serif;
 	font-size:clamp(45px, min(7vh, 5vw), 51px);
 }
 
-.overlay-image {
+.OverlayImage {
 	position: relative;
   	height: 90%;
 	max-height: 90%;
@@ -78,14 +78,14 @@ body {
 	margin-right: auto;
 } 
 
-.overlay-image .image {
+.OverlayImage .image {
 	height: 100%;
 	width: 100%;
 	display: block;
 	
 }
 
-.overlay-image .hover {
+.OverlayImage .hover {
 	-webkit-backdrop-filter: blur(3px);
 	position: absolute;
 	top: 0;
@@ -97,11 +97,11 @@ body {
 	transition: .5s ease-out;
 }
 
-.overlay-image:hover .hover {
+.OverlayImage:hover .hover {
   opacity: 1;
 }
 
-.overlay-image .overlay-text {
+.OverlayImage .OverlayText {
 	display: block;
 	color: #161412;
 	mix-blend-mode: difference;
@@ -115,7 +115,7 @@ body {
 	width: 100%;
 } 
 
-.video-title {
+.VideoTitle {
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -123,13 +123,13 @@ body {
 	font-size:clamp(14px, min(2vh, 2vw), 18px);
 }
 
-.video-player {
+.VideoPlayer {
 	width: 100%;
 	height: min(250px, min(25vh, 20vw));
 	min-height: 250px;
 }
 
-.video-page-player {
+.VideoPagePlayer {
 	width: 80%;
 	height: 80%;
 	position: absolute;
@@ -196,32 +196,58 @@ body {
 	filter: brightness(0) saturate(100%) invert(100%) sepia(1%) saturate(1603%) hue-rotate(176deg) brightness(96%) contrast(99%);
 }
 
-.nav-bar {
+.NavBar {
 	position: fixed;
 	left: 3vh;
-	top: 3vh;
-	width: 3%;
+	top: 4vh;
+	display: grid;
+	grid-template-columns: max(20%, 35px) max(80%, 35px);
+  	/*grid-template-rows: repeat(auto-fill, auto); */
+  	grid-row-gap: 10px;
+  	grid-column-gap: 10px;
 } 
 
-.nav-bar-button {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
-	margin-top: 10%;
+.NavBarButton {
+	grid-column: 1;
+	justify-self:center;
+  	align-self: center;
+	/*position: relative;*/
+	float: left;
+/*	margin-left: auto;
+	margin-right: auto;*/
+	/*display: block;*/
+	/*margin-top: 10%;*/
 	height: 30px;
 	width: 30px;
 	border-radius: 50%;
 	border: none;
+	cursor: pointer;
 	background-color: #16141266;
 	z-index: 10;
 }
 
+/*.ExternalFixedHeight {
+	margin-top: 3%;
+	height: 35px;
+}
+*/
+.NavMenuExpand {
+	/*float: right;*/
+	/*display: inline-block;*/
+	display: none;
+	grid-column: 2;
+	justify-self:start;
+  	align-self: center;
+	/*border-radius: 190px;*/
+	/*height: 30px;*/
+	/*margin-bottom: 4px;*/
+}
 
-/*.nav-bar-button:hover {
-	cursor: pointer;
-	height: 40px;
-	width: 40px;
-	background-color: #EC1A2B;
-	transition: .5s ease;
-}*/
+.NavMenuExpand p {
+	/*padding-top: 10px;*/
+	color: #161412;
+/*	padding-right: 20px;
+	padding-left: 60px;*/
+}
+
 
