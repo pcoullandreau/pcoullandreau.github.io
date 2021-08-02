@@ -15,7 +15,7 @@ class App extends React.Component {
 		this.state = {
 			'isReady':false,
 			'currentSection':'',
-			'scrollPosition':0,
+			'sectionsScrollPositions':[],
 			'VideoAnchorPosition':0
 		};
 
@@ -27,25 +27,38 @@ class App extends React.Component {
 		if (this.config === undefined) {
 			this.fetchConfig().then(json => {
 				this.config = json;
-				this.setState({isReady:true});
+				this.setState({isReady:true}, () => {
+					this.getScrollPositions();
+				})
 			});
 
 		}
-
-		window.addEventListener('scroll', this.handleScroll());
+		window.addEventListener("scroll", this.handleScroll);
 		window.addEventListener("fullscreenchange", this.onFullScreenChange);
 		window.addEventListener("mozfullscreenchange", this.onFullScreenChange);
 		window.addEventListener("webkitfullscreenchange", this.onFullScreenChange);
+		window.onbeforeunload = function () {
+		  window.scrollTo(0, 0);
+		}
 	}
 
 
 	componentWillUnmount() {
-		window.removeEventListener('scroll', this.handleScroll());
 		window.removeEventListener('fullscreenchange', this.onFullScreenChange);
 		window.removeEventListener('mozfullscreenchange', this.onFullScreenChange);
 		window.removeEventListener('webkitfullscreenchange', this.onFullScreenChange);
 	}
 
+
+	getScrollPositions() {
+		var positions = [];
+		for (var i=0; i < this.config.sections.length ; i++) {
+			var position = document.getElementById(this.config.sections[i]).getBoundingClientRect().top;
+			positions.push(position)
+		}
+		positions.push(document.getElementById("thank").getBoundingClientRect().top)
+		this.setState({sectionsScrollPositions:positions});
+	}
 
 	fetchConfig() {
 		var p = new Promise(resolve => {
@@ -92,13 +105,37 @@ class App extends React.Component {
 		event.returnValue =  false;
 	}
 
-	handleScroll = event => {
-		console.log(event)
+	// initScroll() {
+	// 	var currentScrollPosition = -document.getElementById("root").getBoundingClientRect().top;
+
+	// 	if (currentScrollPosition !== 0) {
+	// 		this.handleScroll();
+	// 	}
+	// }
+
+	handleScroll = () => {
+		var currentScrollPosition = -document.getElementById("root").getBoundingClientRect().top + 0.5*window.innerHeight;
+		var distFromBottom = document.getElementById("root").getBoundingClientRect().bottom;
+		var currentSection;
+
+		if (currentScrollPosition <= window.innerHeight || distFromBottom - window.innerHeight <= 0) {
+			currentSection = ''
+		} else {
+			for (var i=0; i < this.state.sectionsScrollPositions.length ; i++) {
+				if (this.state.sectionsScrollPositions[i] < currentScrollPosition) {
+					currentSection = this.config.sections[i];
+				} else {
+					break;
+				}
+			}
+		}
+
+		this.setState({currentSection});
 	} 
 
 	updateScrollPosition = targetSection => {
-		var scrollPosition = document.getElementById(targetSection).getBoundingClientRect().top;
-		this.setState({scrollPosition}, () => {
+		var scrollPosition = document.getElementById(targetSection).getBoundingClientRect().top - 50;
+		this.setState({currentSection:targetSection}, () => {
 			window.scrollBy(0, scrollPosition)
 		})
 
@@ -173,7 +210,7 @@ class App extends React.Component {
 					}
 
 					{/*Thank you*/}
-					<div className="container">
+					<div id="thank" className="container">
 						<div className="block">
 							{ this.renderThankYou() }
 						</div>

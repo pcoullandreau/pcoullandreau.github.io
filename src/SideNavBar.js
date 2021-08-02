@@ -18,10 +18,7 @@ class SideNavBar extends React.Component {
 
 	handleItemClick = (e) => {
 		var targetSection = e.target.name
-		this.setState({selected:targetSection}, () => {
-			this.props.updateScrollPosition(targetSection)
-		});
-
+		this.props.updateScrollPosition(targetSection)
 	}
 
 	render () {
@@ -32,7 +29,7 @@ class SideNavBar extends React.Component {
 						Object.keys(this.props.config.sections).map((item, i) => {
 							var target = this.props.config.sections[item]
 							var backgroundColor = "#16141266";
-							if (this.state.selected === target) {
+							if (this.props.selection === target) {
 								backgroundColor = "#EC1A2B";
 							}
 							return (
