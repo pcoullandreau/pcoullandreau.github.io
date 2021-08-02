@@ -1,5 +1,4 @@
 
-
 body {
 	background-color: #f2f3f4;
 	color: #161412;
@@ -201,53 +200,36 @@ body {
 	left: 3vh;
 	top: 4vh;
 	display: grid;
-	grid-template-columns: max(20%, 35px) max(80%, 35px);
+	grid-template-columns: max(20%, 35px) max(80%, 150px);
   	/*grid-template-rows: repeat(auto-fill, auto); */
-  	grid-row-gap: 10px;
+  	grid-row-gap: 15px;
   	grid-column-gap: 10px;
+  	overflow: visible;
 } 
 
 .NavBarButton {
 	grid-column: 1;
 	justify-self:center;
   	align-self: center;
-	/*position: relative;*/
 	float: left;
-/*	margin-left: auto;
-	margin-right: auto;*/
-	/*display: block;*/
-	/*margin-top: 10%;*/
-	height: 30px;
-	width: 30px;
+	height: 20px;
+	width: 20px;
 	border-radius: 50%;
 	border: none;
 	cursor: pointer;
-	background-color: #16141266;
+	border: 1px solid #161412;
 	z-index: 10;
 }
 
-/*.ExternalFixedHeight {
-	margin-top: 3%;
-	height: 35px;
-}
-*/
 .NavMenuExpand {
-	/*float: right;*/
-	/*display: inline-block;*/
 	display: none;
 	grid-column: 2;
 	justify-self:start;
   	align-self: center;
-	/*border-radius: 190px;*/
-	/*height: 30px;*/
-	/*margin-bottom: 4px;*/
 }
 
 .NavMenuExpand p {
-	/*padding-top: 10px;*/
 	color: #161412;
-/*	padding-right: 20px;
-	padding-left: 60px;*/
 }
 
 

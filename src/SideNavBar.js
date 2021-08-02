@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Icon } from 'semantic-ui-react';
 
 class SideNavBar extends React.Component {
 
@@ -17,10 +16,24 @@ class SideNavBar extends React.Component {
 
    handleItemHover = (e) => {
    	var targetElement = e.target.nextSibling
+   	var currentButton = e.target
    	if (e.type === "mouseenter") {
-   		targetElement.style.display = "inline-block"
+   		targetElement.style.display = "inline-block";
+   		if (this.props.selection === currentButton.name) {
+				currentButton.style.backgroundColor = "#EC1A2B";
+				currentButton.style.border = "none";
+			} else {
+				currentButton.style.backgroundColor = "#161412";
+				currentButton.style.border = "1px solid #161412";
+			}
    	} else {
-   		targetElement.style.display = "none"
+   		targetElement.style.display = "none";
+   		if (this.props.selection === currentButton.name) {
+				currentButton.style.backgroundColor = "#EC1A2B";
+			} else {
+				currentButton.style.backgroundColor = "#f2f3f4";
+				currentButton.style.border = "1px solid #161412";
+			}
    	}
    } 
 
@@ -37,9 +50,11 @@ class SideNavBar extends React.Component {
 						React.Children.toArray(
 							Object.keys(this.props.config.sections).map((item, i) => {
 								var target = this.props.config.sections[item]
-								var backgroundColor = "#16141266";
+								var backgroundColor = "#f2f3f4";
+								var borderStyle = "1px solid #161412";
 								if (this.props.selection === target) {
 									backgroundColor = "#EC1A2B";
+									borderStyle = "none";
 								}
 								return (
 									<React.Fragment>
@@ -48,7 +63,7 @@ class SideNavBar extends React.Component {
 											id = {`nav-bar-button-${item}`} 
 											name={target}
 											item = {item}
-											style = {{backgroundColor:backgroundColor}} 
+											style = {{ backgroundColor:backgroundColor, border:borderStyle }} 
 											onClick={this.handleItemClick}
 											onMouseEnter={this.handleItemHover}
 											onMouseLeave={this.handleItemHover}
