@@ -39,11 +39,15 @@ body {
 	font-size:clamp(14px, min(2vh, 2vw), 21px);
 	line-height: clamp(2vh, 2.5vh, 20px);;
 	display: block;
+	color: #161412;
+	text-decoration: none;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .SectionTitle {
-	padding-top: 5% !important;
+	padding-top: 2%;
 	font-size:clamp(22px, min(3vh, 3vw), 28px);
+	font-family: sans-serif;
 } 
 
 .Title {
@@ -147,6 +151,8 @@ body {
 	width: 1016px;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }
 
 .ui.grid {
@@ -200,7 +206,7 @@ body {
 	left: 3vh;
 	top: 4vh;
 	display: grid;
-	grid-template-columns: max(20%, 35px) max(80%, 150px);
+	grid-template-columns: max(20%, 30px) max(80%, 150px);
   	/*grid-template-rows: repeat(auto-fill, auto); */
   	grid-row-gap: 15px;
   	grid-column-gap: 10px;
@@ -214,8 +220,8 @@ body {
 	float: left;
 	height: 20px;
 	width: 20px;
+	padding:  0px;
 	border-radius: 50%;
-	border: none;
 	cursor: pointer;
 	border: 1px solid #161412;
 	z-index: 10;
@@ -233,3 +239,62 @@ body {
 }
 
 
+
+/*
+@media only screen {
+	body {
+		min-width:360px;
+	}
+
+	#root {
+		min-width: 360px;
+		overflow:visible;
+	}
+
+	.container {
+		height: max(100vh, 75vw);
+		min-height: 360px;
+		width: 80%;
+	}
+
+	.ui.divider {
+		width: 90%;
+	}
+
+	.SectionTitle {
+		font-size:22px;
+	} 
+
+	.Title {
+		font-size:clamp(18px, min(7.5vh, 6.5vw), 61px);
+	}
+
+	.Subtitle {
+		font-size:clamp(15px, min(3.5vh, 3vw), 31px);
+	}
+
+	.Name {
+		font-family: 'Montserrat', sans-serif;
+		font-size:clamp(25px, min(7vh, 2.5vw), 51px);
+	}
+
+	.VideoTitle {
+		font-size:clamp(14px, min(2vh, 2vw), 18px);
+	}
+
+	.VideoPlayer {
+		height: min(250px, min(25vh, 20vw));
+		min-height: 250px;
+	}
+
+	.gif {
+		height: min(250px, min(25vh, 20vw));
+		min-height: 250px;
+	} 
+
+	.OverlayImage .image {
+		height:auto;
+	}
+
+
+}*/

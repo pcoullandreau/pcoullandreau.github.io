@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
 import Video from './Video.js';
+import { Divider } from 'semantic-ui-react';
 
 class Section extends React.Component {
 
@@ -56,7 +57,7 @@ class Section extends React.Component {
 						/>
 					</div>
 				</div>
-				<div className="ui section divider"></div>
+				<Divider></Divider>
 			</React.Fragment>
 		)
 	}
@@ -75,7 +76,7 @@ class Section extends React.Component {
 						</div>
 					</div>
 				</div>
-				<div className="ui section divider"></div>
+				<Divider></Divider>
 			</React.Fragment>
 		)
 	}
@@ -109,7 +110,7 @@ class Section extends React.Component {
 												<div>More videos in <a href={videos['playlist']}>this playlist</a>!</div>
 											</div>	
 										</div>
-										<div className="ui section divider"></div>
+										<Divider></Divider>
 									</React.Fragment>
 								)
 							})
@@ -151,7 +152,7 @@ class Section extends React.Component {
 						{ this.renderTitle(target) }
 					</div>
 				</div>
-				<div className="ui section divider"></div>
+				<Divider></Divider>
 				{ this.renderSection(target) }
 			</React.Fragment>
 		)

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import PropTypes from 'prop-types';
+import { Grid, Segment } from 'semantic-ui-react';
 
 class Video extends React.Component {
 
@@ -33,50 +34,48 @@ class Video extends React.Component {
 		} 
 
 		return (
-			<React.Fragment>
-				<div className="ui equal width grid">
-					<div className="row">
-						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+0)}
-								<p className="VideoTitle">{videos[offset+0].title}</p>
-							</div>
-						</div>
-						<div className="column">
-							<div className="ui center aligned segment">
-								{target_1}
-								<p className="VideoTitle">{videos[offset+1].title}</p>
-							</div>
-						</div>
-						<div className="column">
-							<div className="ui center aligned segment">
-								{target_2}
-								<p className="VideoTitle">{videos[offset+2].title}</p>
-							</div>
-						</div>
-					 </div>
-					 <div className="row">
-						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+3)}
-								<p className="VideoTitle">{videos[offset+3].title}</p>
-							</div>
-						</div>
-						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+4)}
-								<p className="VideoTitle">{videos[offset+4].title}</p>
-							</div>
-						</div>
-						<div className="column">
-							<div className="ui segment">
-								{this.renderVideoPlayer(offset+5)}
-								<p className="VideoTitle">{videos[offset+5].title}</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</React.Fragment>
+			<Grid>
+				<Grid.Row columns='equal'>
+					<Grid.Column>
+						<Segment>
+							{this.renderVideoPlayer(offset+0)}
+							<p className="VideoTitle">{videos[offset+0].title}</p>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment textAlign='center'>
+							{target_1}
+							<p className="VideoTitle">{videos[offset+1].title}</p>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment textAlign='center'>
+							{target_2}
+							<p className="VideoTitle">{videos[offset+2].title}</p>
+						</Segment>
+					</Grid.Column>
+				</Grid.Row>
+				<Grid.Row columns='equal'>
+					<Grid.Column>
+						<Segment>
+							{this.renderVideoPlayer(offset+3)}
+							<p className="VideoTitle">{videos[offset+3].title}</p>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>
+							{this.renderVideoPlayer(offset+4)}
+							<p className="VideoTitle">{videos[offset+4].title}</p>
+						</Segment>
+					</Grid.Column>
+					<Grid.Column>
+						<Segment>
+							{this.renderVideoPlayer(offset+5)}
+							<p className="VideoTitle">{videos[offset+5].title}</p>
+						</Segment>
+					</Grid.Column>
+				</Grid.Row>
+			</Grid>
 		)
 	}
 

@@ -2,6 +2,7 @@ import React from 'react';
 import './style.css';
 import Section from './Section.js';
 import SideNavBar from './SideNavBar.js';
+import { Divider } from 'semantic-ui-react';
 
 // pdf import
 // import portfolio from './portfolio.pdf'
@@ -105,13 +106,6 @@ class App extends React.Component {
 		event.returnValue =  false;
 	}
 
-	// initScroll() {
-	// 	var currentScrollPosition = -document.getElementById("root").getBoundingClientRect().top;
-
-	// 	if (currentScrollPosition !== 0) {
-	// 		this.handleScroll();
-	// 	}
-	// }
 
 	handleScroll = () => {
 		var currentScrollPosition = -document.getElementById("root").getBoundingClientRect().top + 0.5*window.innerHeight;
@@ -147,7 +141,7 @@ class App extends React.Component {
 				<h1 className={['Name', 'center'].join(' ')}> Pierre Coullandreau </h1>	
 				<h2 className="Subtitle"> Personal artistic book </h2>
 				<div id="address">
-					<span className="AddressLine">pierre.cldr@gmail.com</span>
+					<a className="AddressLine" href = "mailto: pierre.cldr@gmail.com">pierre.cldr@gmail.com</a>
 				</div>
 			</React.Fragment>
 
@@ -160,7 +154,7 @@ class App extends React.Component {
 				<h1 className={['Name', 'center'].join(' ')}> Thank you </h1>
 				<h2 className="Subtitle"> Pierre Coullandreau </h2>
 				<div id="address">
-					<span className="AddressLine">pierre.cldr@gmail.com</span>
+					<a className="AddressLine" href = "mailto: pierre.cldr@gmail.com">pierre.cldr@gmail.com</a>
 				</div>
 			</React.Fragment>
 
@@ -189,7 +183,7 @@ class App extends React.Component {
 							{ this.renderName() }
 						</div>
 					</div>
-					<div className="ui section divider"></div>
+					<Divider></Divider>
 
 
 					{/*Sections*/}
