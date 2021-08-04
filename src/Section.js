@@ -69,7 +69,7 @@ class Section extends React.Component {
 					<div className="block">
 						{ this.renderSectionTitle(target.title) }
 						<div className="OverlayImage">
-							<img className="image" src={target.path} loading="lazy" alt={target.alt}/>
+							<img className="image" src={target.path} width="1016" height="800" loading="lazy" alt={target.alt}/>
 							<div className="hover" title={`${target.alt}.png`} onClick={e => this.props.onImageClick(e, target.high)}>
 								<div className="OverlayText">Click to enlarge</div>
 							</div>

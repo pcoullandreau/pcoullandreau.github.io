@@ -29,8 +29,8 @@ class Video extends React.Component {
 		var target_2 = (<React.Fragment>{this.renderVideoPlayer(offset+2)}</React.Fragment>)
 
 		if (sectionNumber === 0) {
-			target_1 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/07.gif`} alt="CF widget"/>)
-			target_2 = (<img className="gif" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/08.gif`} alt="How to go from there" />)
+			target_1 = (<img className="gif" loading="lazy" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/07.gif`} alt="CF widget"/>)
+			target_2 = (<img className="gif" loading="lazy" src={`${process.env.PUBLIC_URL}/images/high_res/01_Graphic Designer/08.gif`} alt="How to go from there" />)
 		} 
 
 		return (
@@ -92,6 +92,7 @@ class Video extends React.Component {
 					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" 
 					allowFullScreen
+					loading="lazy"
 					src={videoLink} 
 				/>
 			</React.Fragment>
